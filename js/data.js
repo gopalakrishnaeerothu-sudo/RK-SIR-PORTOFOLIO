@@ -18,11 +18,11 @@ const SITE = {
   tagline: "Bringing stories to life on screen, and balance to life off it.",
 
   // Main photo shown in the 3D frame at the top of the page
-  // (the colour photo: denim jacket, smiling)
+  // (colour photo: black jacket, garden)
   heroPhoto: "images/profile/hero.jpg",
 
   // Photo shown in the "About" section, with a cinematic black & white effect
-  // (the black & white intense look)
+  // (black & white portrait with glasses)
   aboutPhoto: "images/profile/about.jpg",
 
   // About text: each line becomes a paragraph. Replace with his real story.
@@ -62,57 +62,155 @@ const SITE = {
 };
 
 /* ---------------------------------------------------------------------
-   MOVIES
-   Copy one { ... } block per movie.
-   poster : file inside images/movies/
-   link   : where to watch it (YouTube, Prime, Netflix, Aha, Hotstar ...)
-            leave "" if there is no link yet
+   MOVIES (newest first)
+   poster  : file inside images/movies/
+   watchOn : where it streams (shown in the movie details)
+   link    : exact watch URL; leave "" to show only "watchOn"
    --------------------------------------------------------------------- */
 const MOVIES = [
   {
-    title: "Anandhini",
-    year: "",            // add the release year, e.g. "2024"
-    role: "",            // his character's name
-    language: "",        // e.g. "Telugu"
-    poster: "images/movies/anandhini.jpg",
-    link: "",            // where to watch it
-    description: "Add a short description of the film and his role."
-  },
-  {
-    title: "Movie Title One",
-    year: "2024",
-    role: "Character name",
-    language: "Telugu",
-    poster: "images/movies/movie1.jpg",
-    link: "",
-    description: "Short description of the film and his role."
-  },
-  {
-    title: "Movie Title Two",
+    title: "Dasara",
     year: "2023",
-    role: "Character name",
     language: "Telugu",
-    poster: "images/movies/movie2.jpg",
-    link: "",
-    description: "Short description of the film and his role."
+    genre: "Period Action Drama",
+    role: "",            // his character name
+    cast: "Nani, Keerthy Suresh, Dheekshith Shetty",
+    watchOn: "Netflix",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/dasara.jpg",
+    description: "Telugu period action drama starring Nani, Keerthy Suresh, Dheekshith Shetty."
   },
   {
-    title: "Movie Title Three",
-    year: "2022",
-    role: "Character name",
+    title: "Dear Comrade",
+    year: "2019",
     language: "Telugu",
-    poster: "images/movies/movie3.jpg",
-    link: "",
-    description: "Short description of the film and his role."
+    genre: "Romantic Action Drama",
+    role: "",            // his character name
+    cast: "Vijay Deverakonda, Rashmika Mandanna",
+    watchOn: "JioHotstar, Amazon Prime Video",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/dear-comrade.jpg",
+    description: "Telugu romantic action drama starring Vijay Deverakonda, Rashmika Mandanna."
   },
   {
-    title: "Movie Title Four",
-    year: "2021",
-    role: "Character name",
+    title: "Kousalya Krishnamurthy",
+    year: "2019",
     language: "Telugu",
-    poster: "images/movies/movie4.jpg",
-    link: "",
-    description: "Short description of the film and his role."
+    genre: "Sports Drama",
+    role: "",            // his character name
+    cast: "Aishwarya Rajesh, Rajendra Prasad",
+    watchOn: "Sun NXT",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/kousalya-krishnamurthy.jpg",
+    description: "Telugu sports drama starring Aishwarya Rajesh, Rajendra Prasad."
+  },
+  {
+    title: "Gaddalakonda Ganesh",
+    year: "2019",
+    language: "Telugu",
+    genre: "Action Comedy",
+    role: "",            // his character name
+    cast: "Varun Tej, Atharvaa, Pooja Hegde",
+    watchOn: "JioHotstar",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/gaddalakonda-ganesh.jpg",
+    description: "Telugu action comedy starring Varun Tej, Atharvaa, Pooja Hegde."
+  },
+  {
+    title: "Ruler",
+    year: "2019",
+    language: "Telugu",
+    genre: "Action Drama",
+    role: "",            // his character name
+    cast: "Nandamuri Balakrishna, Vedhika, Sonal Chauhan",
+    watchOn: "Sun NXT, Amazon Prime Video",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/ruler.jpg",
+    description: "Telugu action drama starring Nandamuri Balakrishna, Vedhika, Sonal Chauhan."
+  },
+  {
+    title: "Devadas",
+    year: "2018",
+    language: "Telugu",
+    genre: "Action Comedy",
+    role: "",            // his character name
+    cast: "Nagarjuna, Nani, Rashmika Mandanna",
+    watchOn: "JioHotstar, Amazon Prime Video, ZEE5",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/devadas.jpg",
+    description: "Telugu action comedy starring Nagarjuna, Nani, Rashmika Mandanna."
+  },
+  {
+    title: "Lovers Club",
+    year: "2017",
+    language: "Telugu",
+    genre: "Romance",
+    role: "",            // his character name
+    cast: "Anish Chandra, Pavani",
+    watchOn: "Amazon Prime Video",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/lovers-club.jpg",
+    description: "Telugu romance starring Anish Chandra, Pavani."
+  },
+  {
+    title: "Pelli Choopulu",
+    year: "2016",
+    language: "Telugu",
+    genre: "Romantic Comedy",
+    role: "",            // his character name
+    cast: "Vijay Deverakonda, Ritu Varma",
+    watchOn: "Sun NXT",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/pelli-choopulu.jpg",
+    description: "Telugu romantic comedy starring Vijay Deverakonda, Ritu Varma."
+  },
+  {
+    title: "Arddhanaari",
+    year: "2016",
+    language: "Telugu",
+    genre: "Vigilante Thriller",
+    role: "Police officer",
+    cast: "Arjun Yajath, Mouryaani",
+    watchOn: "YouTube (free)",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/arddhanaari.jpg",
+    description: "Telugu vigilante thriller starring Arjun Yajath, Mouryaani."
+  },
+  {
+    title: "Killing Veerappan",
+    year: "2016",
+    language: "Kannada",
+    genre: "Biographical Crime",
+    role: "",            // his character name
+    cast: "Shiva Rajkumar, Sandeep Bharadwaj",
+    watchOn: "Amazon Prime Video, Sun NXT, YouTube",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/killing-veerappan.jpg",
+    description: "Kannada biographical crime starring Shiva Rajkumar, Sandeep Bharadwaj."
+  },
+  {
+    title: "Thirumanam Ennum Nikkah",
+    year: "2014",
+    language: "Tamil",
+    genre: "Romantic Comedy",
+    role: "",            // his character name
+    cast: "Jai, Nazriya Nazim",
+    watchOn: "Amazon Prime Video",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/thirumanam-ennum-nikkah.jpg",
+    description: "Tamil romantic comedy starring Jai, Nazriya Nazim."
+  },
+  {
+    title: "Anandhini",
+    year: "",
+    language: "",
+    genre: "",
+    role: "",            // his character name
+    cast: "",
+    watchOn: "",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/anandhini.jpg",
+    description: "Add the year, language and a short description of the film."
   }
 ];
 
@@ -123,15 +221,17 @@ const MOVIES = [
    --------------------------------------------------------------------- */
 const GALLERY = [
   { src: "images/profile/hero.jpg", caption: "Portrait" },
+  { src: "images/gallery/police-field.jpg", caption: "In uniform" },
+  { src: "images/gallery/arddhanaari-collage.jpg", caption: "Arddhanaari" },
+  { src: "images/gallery/portrait-laugh.jpg", caption: "Candid" },
+  { src: "images/gallery/action-scene.jpg", caption: "Action scene" },
   { src: "images/profile/about.jpg", caption: "Character look" },
-  { src: "images/gallery/photo1.jpg", caption: "On set" },
-  { src: "images/gallery/photo2.jpg", caption: "Yoga session" },
-  { src: "images/gallery/photo3.jpg", caption: "Portrait" },
-  { src: "images/gallery/photo4.jpg", caption: "Behind the scenes" },
-  { src: "images/gallery/photo5.jpg", caption: "Meditation" },
-  { src: "images/gallery/photo6.jpg", caption: "Event" },
-  { src: "images/gallery/photo7.jpg", caption: "Workshop" },
-  { src: "images/gallery/photo8.jpg", caption: "Portrait" }
+  { src: "images/gallery/police-hilltop.jpg", caption: "On location" },
+  { src: "images/gallery/on-set.jpg", caption: "On set" },
+  { src: "images/gallery/portrait-glasses.jpg", caption: "Portrait" },
+  { src: "images/gallery/police-role.jpg", caption: "Police role" },
+  { src: "images/gallery/character-look.jpg", caption: "Look test" },
+  { src: "images/gallery/on-set-2.jpg", caption: "Behind the scenes" }
 ];
 
 /* ---------------------------------------------------------------------
@@ -140,7 +240,13 @@ const GALLERY = [
    --------------------------------------------------------------------- */
 const RING_PHOTOS = [
   "images/profile/hero.jpg",
-  "images/profile/about.jpg"
+  "images/gallery/police-field.jpg",
+  "images/gallery/portrait-laugh.jpg",
+  "images/gallery/portrait-glasses.jpg",
+  "images/gallery/police-hilltop.jpg",
+  "images/profile/about.jpg",
+  "images/gallery/police-role.jpg",
+  "images/gallery/on-set-2.jpg"
 ];
 
 /* ---------------------------------------------------------------------

@@ -58,7 +58,7 @@
       ${m.link ? `<span class="film-play" title="Watch available">▶</span>` : ""}
       <div class="film-info">
         <h3>${esc(m.title)}</h3>
-        <p>${esc([m.role && "as " + m.role, m.language].filter(Boolean).join(" · "))}</p>
+        <p>${esc([m.role ? "as " + m.role : m.genre, m.language].filter(Boolean).join(" · "))}</p>
       </div>
       <div class="film-shine"></div>`;
     setImg($("img", card), m.poster, m.title, 400, 600);
@@ -85,12 +85,14 @@
   function openMovie(m) {
     setImg($("#mPoster"), m.poster, m.title, 400, 600);
     $("#mTitle").textContent = m.title;
-    $("#mMeta").textContent = [m.year, m.language].filter(Boolean).join(" · ");
+    $("#mMeta").textContent = [m.year, m.language, m.genre].filter(Boolean).join(" · ");
     $("#mRole").textContent = m.role ? "as " + m.role : "";
     $("#mDesc").textContent = m.description || "";
-    const link = $("#mLink");
-    if (m.link) { link.href = m.link; link.style.display = ""; $("#mNoLink").style.display = "none"; }
-    else { link.style.display = "none"; $("#mNoLink").style.display = ""; }
+    const link = $("#mLink"), noLink = $("#mNoLink");
+    if (m.link) { link.href = m.link; link.style.display = ""; }
+    else link.style.display = "none";
+    noLink.textContent = m.watchOn ? "Streaming on: " + m.watchOn : "Watch link coming soon";
+    noLink.style.display = m.link && !m.watchOn ? "none" : "";
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
   }

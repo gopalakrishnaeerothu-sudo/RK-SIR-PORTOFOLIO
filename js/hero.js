@@ -1,5 +1,5 @@
 /* Hero stage: scaled design canvas, type fitter, 3D perspective ring,
-   browser mock, menu and the one-time entrance timeline. */
+   opening portrait, menu and the one-time entrance timeline. */
 (function () {
   "use strict";
   const $ = (s, el = document) => el.querySelector(s);
@@ -33,22 +33,22 @@
   stars($("#stA"), 150, 0, 0.05, 0.3);
   stars($("#stB"), 18, 1.2, 0.35, 0.7);
 
-  /* ---------------- browser mock: his filmography ---------------- */
-  const pgHero = $("#pgHeroImg");
-  pgHero.addEventListener("error", () => (pgHero.style.display = "none"));
-  pgHero.src = SITE.heroPhoto;
-  $("#pggrid").innerHTML = MOVIES.slice(0, 4).map((m, i) => `
-    <div class="pgcard" data-i="${i}">
-      <div class="ph">${m.year ? `<span class="tag">${esc(m.year)}</span>` : ""}<img alt="${esc(m.title)} poster" src="${esc(m.poster)}"></div>
-      <b>${esc(m.title)}</b>
-      <i>${esc(m.role ? "as " + m.role : "")}</i>
-      <s>${m.link ? "▶ Watch now" : esc(m.language || "")}</s>
-    </div>`).join("");
-  document.querySelectorAll(".pgcard").forEach((c) => {
-    const img = $("img", c);
-    img.addEventListener("error", () => { img.onerror = null; img.src = window.RK ? RK.placeholder(MOVIES[+c.dataset.i].title, 400, 400) : ""; }, { once: true });
-    c.addEventListener("click", () => window.RK && RK.openMovie(MOVIES[+c.dataset.i]));
-  });
+  /* ---------------- opening portrait (in front of the 3D wheel) ---------------- */
+  const portrait = $("#portrait"), ptMagnet = $("#ptMagnet"), ptImg = $("#ptImg");
+  ptImg.addEventListener("error", () => portrait.classList.add("broken"));
+  ptImg.src = SITE.heroPhoto;
+  // magnet: the portrait drifts toward the cursor when it comes near, and tilts in 3D
+  if (!reduce.matches && window.matchMedia("(hover: hover)").matches) {
+    window.addEventListener("mousemove", (e) => {
+      const r = portrait.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+      const on = Math.abs(dx) < r.width / 2 + 160 && Math.abs(dy) < r.height / 2 + 160;
+      ptMagnet.style.transition = on ? "transform .3s ease-out" : "transform .6s ease-in-out";
+      ptMagnet.style.transform = on
+        ? `translate3d(${dx / 6}px, ${dy / 8}px, 0) rotateY(${dx / 30}deg) rotateX(${-dy / 40}deg)`
+        : "none";
+    });
+  }
 
   /* ---------------- 3D ring ---------------- */
   const R = 891, N = 37, STEP = 360 / N, CULL = 42, SPEED = 1.9;
@@ -247,7 +247,7 @@
     const st = canvas.style;
     if (mode === "phone") {
       k = 1;
-      ["--k", "--fill", "--stshift", "--sshift", "--rs"].forEach((p) => st.removeProperty(p));
+      ["--k", "--top", "--stshift", "--sshift", "--rs"].forEach((p) => st.removeProperty(p));
       layout();
       return;
     }
@@ -259,20 +259,15 @@
       ramp = Math.min(1, (TAB_MAX - vw) / 120);
       tboost = 1 + 0.14 * ramp;
     }
-    k = Math.min(vw / W, vh / 560);
-    let fill = Math.max(0, vh / k - 657), ss = 0, rs = 1, sh = 0;
-    if (mode === "tablet" && fill > 0) {
-      ss = Math.min(fill * 0.55, 420) * ramp;
-      rs = 1 + Math.min(fill / 1100, 0.75) * ramp;
-      const slack = 219.5 - 125 * rs + ss;
-      sh = Math.max(0, slack / 2 - 28) * ramp;
-      fill -= ss;
-    }
+    // FULL_H: the design height that includes the bottom of the 3D wheel (cards end near y=770),
+    // so the carousel is never cropped; spare height centres the composition vertically
+    const FULL_H = 790;
+    k = Math.min(vw / W, vh / FULL_H);
     st.setProperty("--k", k);
-    st.setProperty("--fill", fill + "px");
-    st.setProperty("--sshift", ss + "px");
-    st.setProperty("--rs", rs);
-    st.setProperty("--stshift", sh + "px");
+    st.setProperty("--top", Math.max(0, (vh - FULL_H * k) / 2) + "px");
+    st.setProperty("--sshift", "0px");
+    st.setProperty("--rs", 1);
+    st.setProperty("--stshift", "0px");
     layout();
   }
 
@@ -337,7 +332,7 @@
     play($("#sub2"), { opacity: 0, translate: Y(10) }, 620, 745, EXPO);
     play($("#cta2"), { opacity: 0, translate: Y(13), scale: ".985" }, 620, 830, EXPO);
     play(ring, { opacity: 0, translate: Y(18), scale: ".99" }, 950, 700, EXPO);
-    play($("#browser"), { opacity: 0, translate: Y(26) }, 900, 900, EXPO);
+    play(portrait, { opacity: 0, translate: Y(40), scale: ".96" }, 1000, 900, EXPO);
     if (!wa.classList.contains("hidden")) play(wa, { opacity: 0, scale: ".88" }, 500, 1260, EXPO);
     root.classList.remove("intro"); // animations (fill:both) now hold the start frames
     lastAnim.finished.then(settle).catch(settle);
