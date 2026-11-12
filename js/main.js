@@ -211,14 +211,22 @@
     cine.style.setProperty("--sy", ((e.clientY - r.top) / r.height) * 100 + "%");
   });
 
+  // wa.me needs the full international number as digits; a bare 10-digit number is Indian
+  function waNumber(p) { const d = p.replace(/\D/g, ""); return d.length === 10 ? "91" + d : d; }
+  window.RK.waNumber = waNumber;
+
   /* ---------------------------------------------------------------
      Contact
      --------------------------------------------------------------- */
   const c = SITE.contact;
+  // both numbers are on WhatsApp: a Call link and a WhatsApp chat link for each
+  const phoneLinks = (c.phones || []).filter((p) => p && p.trim()).flatMap((p) => [
+    `<a href="tel:${esc(p.replace(/[^\d+]/g, ""))}">☎ ${esc(p)}</a>`,
+    `<a href="https://wa.me/${waNumber(p)}" target="_blank" rel="noopener">WhatsApp ${esc(p)}</a>`
+  ]);
   const links = [
     c.email && `<a href="mailto:${esc(c.email)}">✉ ${esc(c.email)}</a>`,
-    c.phone && `<a href="tel:${esc(c.phone.replace(/\s/g, ""))}">☎ ${esc(c.phone)}</a>`,
-    c.whatsapp && `<a href="https://wa.me/${esc(c.whatsapp)}" target="_blank" rel="noopener">WhatsApp</a>`,
+    ...phoneLinks,
     c.instagram && `<a href="${esc(c.instagram)}" target="_blank" rel="noopener">Instagram</a>`,
     c.youtube && `<a href="${esc(c.youtube)}" target="_blank" rel="noopener">YouTube</a>`,
     c.facebook && `<a href="${esc(c.facebook)}" target="_blank" rel="noopener">Facebook</a>`,

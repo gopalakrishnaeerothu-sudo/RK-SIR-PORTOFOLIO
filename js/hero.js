@@ -10,16 +10,15 @@
   const H = SITE.hero;
 
   /* ---------------- text from data.js ---------------- */
-  $("#badgeTxt").textContent = H.badge;
-  $("#h1a").textContent = H.line1;
-  $("#h1b").textContent = H.line2;
-  $("#sub1").innerHTML = `<b>${esc(H.sub1Bold)}</b> ${esc(H.sub1)}`;
-  $("#sub2").textContent = H.sub2;
+  $("#h1a").textContent = H.hello;
+  $("#sub1").textContent = H.tagline1;
+  $("#sub2").textContent = H.tagline2;
   $("#ctaLabel").textContent = H.navCta;
   $("#vpLabel").textContent = H.heroCta;
 
   const wa = $("#wa");
-  if (SITE.contact.whatsapp) wa.href = "https://wa.me/" + SITE.contact.whatsapp.replace(/\D/g, "");
+  const firstPhone = (SITE.contact.phones || []).find((p) => p && p.trim());
+  if (firstPhone) wa.href = "https://wa.me/" + RK.waNumber(firstPhone);
   else wa.classList.add("hidden");
 
   /* ---------------- starfield ---------------- */
@@ -36,7 +35,7 @@
   /* ---------------- opening portrait (in front of the 3D wheel) ---------------- */
   const portrait = $("#portrait"), ptMagnet = $("#ptMagnet"), ptImg = $("#ptImg");
   ptImg.addEventListener("error", () => portrait.classList.add("broken"));
-  ptImg.src = SITE.heroPhoto;
+  ptImg.src = H.cutout;
   // magnet: the portrait drifts toward the cursor when it comes near, and tilts in 3D
   if (!reduce.matches && window.matchMedia("(hover: hover)").matches) {
     window.addEventListener("mousemove", (e) => {
@@ -205,7 +204,7 @@
     el.style.top = btnH / 2 - (base - capPx / 2) + 1.1 + "px";
   }
 
-  const fitted = ["h1a", "h1b", "sub1", "sub2", "badgeTxt", "wmName", "ctaLabel", "vpLabel"].map((id) => document.getElementById(id));
+  const fitted = ["h1a", "sub1", "sub2", "wmName", "ctaLabel", "vpLabel"].map((id) => document.getElementById(id));
   const links = $("#links");
 
   function layout() {
@@ -217,13 +216,16 @@
       return;
     }
     const T = mode === "tablet" ? tboost : 1;
-    const [h1a, h1b, sub1, sub2, badgeTxt, wmName, ctaLabel, vpLabel] = fitted;
+    const [h1a, sub1, sub2, wmName, ctaLabel, vpLabel] = fitted;
     // headline: spec cap heights; ink widths kept natural, squeezed only if too wide
-    fitBox(h1a, 563.5 * T * 1.15, 37.2 * T, "translateX(-50%)", true); baseline(h1a, 204.5);
-    fitBox(h1b, 680 * T, 37.2 * T, "translateX(-50%)", true); baseline(h1b, 258.5);
-    fitBox(sub1, 389 * T * 1.2, 8.4 * T, "translateX(-50%)", true); baseline(sub1, 300.5);
-    fitBox(sub2, 311 * T * 1.4, 8.4 * T, "translateX(-50%)", true); baseline(sub2, 316.5);
-    fitBox(badgeTxt, 196 * T, 9.4 * T, "translate(2px,-1px)", true);
+    // giant "HI, I'M ..." heading: font size chosen so the line spans the canvas width
+    h1a.style.transform = "translateX(-50%)";
+    h1a.style.fontSize = "100px";
+    h1a.style.fontSize = (100 * 1100) / inkWidth(h1a) + "px";
+    baseline(h1a, 222);
+    // tagline sits left, under the heading (GK-style bottom-left copy, raised above the wheel)
+    fitBox(sub1, 340, 10.5 * T, "", true); baseline(sub1, 300);
+    fitBox(sub2, 340, 10.5 * T, "", true); baseline(sub2, 322);
     fitBox(wmName, 51 * T, 11.4 * T, "", true); baseline(wmName, 38.5);
     fitBox(ctaLabel, 100 * T, 8.9 * T, "", true); centreLabel($("#navCta"), ctaLabel, 8.9 * T);
     fitBox(vpLabel, 100 * T, 9.5 * T, "", true); centreLabel($("#cta2"), vpLabel, 9.5 * T);
@@ -325,9 +327,7 @@
     [...links.children].forEach((a, i) => play(a, { opacity: 0, translate: Y(6) }, 460, 215 + i * 45, SOFT));
     play(burger, { opacity: 0, translate: Y(6) }, 460, 300, SOFT);
     play($("#navCta"), { opacity: 0, translate: Y(6) }, 500, 400, SOFT);
-    play($(".badge"), { opacity: 0, translate: Y(11), scale: ".985" }, 560, 270, EXPO);
     play($("#h1a"), { opacity: 0, translate: Y(15), clipPath: "inset(100% 0 -30% 0)" }, 900, 380, EXPO);
-    play($("#h1b"), { opacity: 0, translate: Y(15), clipPath: "inset(100% 0 -30% 0)" }, 900, 470, EXPO);
     play($("#sub1"), { opacity: 0, translate: Y(10) }, 620, 690, EXPO);
     play($("#sub2"), { opacity: 0, translate: Y(10) }, 620, 745, EXPO);
     play($("#cta2"), { opacity: 0, translate: Y(13), scale: ".985" }, 620, 830, EXPO);

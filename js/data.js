@@ -34,12 +34,10 @@ const SITE = {
 
   // Text on the first (3D hero) screen
   hero: {
-    badge: "Actor on screen · Healer on the mat",
-    line1: "RamaRaju",
-    line2: "Actor & Yoga Therapist",
-    sub1Bold: "Actor / Yoga Therapist",
-    sub1: "bringing stories to life on screen,",
-    sub2: "and breath, balance and calm to life off it.",
+    hello: "Hi, I'm RamaRaju",                    // giant heading on the first screen
+    cutout: "images/profile/hero-cutout.webp",     // cut-out portrait standing over the 3D wheel
+    tagline1: "Actor on screen, yoga therapist",
+    tagline2: "off it: stories, breath & balance",
     navCta: "Book a session",
     heroCta: "Watch films"
   },
@@ -50,9 +48,11 @@ const SITE = {
 
   // Contact details: leave "" for anything you don't want shown
   contact: {
-    email: "",          // e.g. "ramakrishna@email.com"
-    phone: "",          // e.g. "+91 98765 43210"
-    whatsapp: "",       // number with country code, digits only, e.g. "919876543210"
+    email: "",          // e.g. "ramaraju@email.com"
+    // Both numbers are on WhatsApp: each gets a Call button and a WhatsApp button.
+    // Write them with the country code, e.g. "+91 98765 43210".
+    // (A plain 10-digit number is treated as Indian and gets +91 added for WhatsApp.)
+    phones: ["", ""],
     instagram: "",      // full link, e.g. "https://instagram.com/username"
     youtube: "",        // full link
     facebook: "",       // full link
