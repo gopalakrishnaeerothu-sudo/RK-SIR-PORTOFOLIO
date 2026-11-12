@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <title>Ramakrishna | Actor &amp; Yoga Therapist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Official portfolio of Ramakrishna, actor and yoga therapist. Filmography, gallery, and yoga therapy sessions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    document.documentElement.classList.add('intro');
+    setTimeout(function(){document.documentElement.classList.remove('intro');},4000);
+  </script>
+</head>
+<body>
+  <!-- particle background for the sections below the hero -->
+  <canvas id="bg3d"></canvas>
+
+  <!-- compact nav that appears once you scroll past the hero -->
+  <header class="topbar" id="topbar">
+    <a href="#home" class="tb-logo">RK<span>.</span></a>
+    <nav class="tb-links">
+      <a href="#about">About</a><a href="#films">Films</a><a href="#yoga">Yoga</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============================ HERO STAGE ============================ -->
+  <section class="stage" id="home">
+    <div class="bg"></div>
+    <div class="stars" id="stA"></div>
+    <div class="stars" id="stB"></div>
+
+    <div class="canvas" id="canvas">
+      <div class="stack">
+        <nav class="nav" id="nav">
+          <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sw" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#8ef4ff"/><stop offset=".5" stop-color="#35d8ff"/><stop offset="1" stop-color="#0a86d8"/>
+              </linearGradient>
+              <linearGradient id="sw2" x1="40" y1="10" x2="10" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#a6f7ff"/><stop offset="1" stop-color="#0f9ae0" stop-opacity=".25"/>
+              </linearGradient>
+            </defs>
+            <g transform="rotate(-32 24 24)">
+              <ellipse cx="24" cy="24" rx="18.5" ry="9.6" stroke="url(#sw2)" stroke-width="3.1" stroke-linecap="round" stroke-dasharray="58 30" stroke-dashoffset="14"/>
+              <circle cx="41.4" cy="20.6" r="3.1" fill="#bff6ff"/>
+            </g>
+            <circle cx="24" cy="24" r="6.6" fill="url(#sw)"/>
+            <circle cx="24" cy="24" r="2.6" fill="#fff"/>
+          </svg>
+          <a href="#home" class="wm"><span class="kick" id="wmKick">PORTFOLIO</span><span class="name" id="wmName">RK</span></a>
+          <button type="button" class="burger" id="burger" aria-label="Opens menu" aria-expanded="false" aria-controls="navmenu"><span></span><span></span><span></span></button>
+          <div class="navmenu" id="navmenu">
+            <div class="links" id="links">
+              <a href="#about">About</a><a href="#films">Films</a><a href="#yoga">Yoga</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+            </div>
+            <a href="#contact" class="btn" id="navCta"><span id="ctaLabel">Book a session</span></a>
+          </div>
+        </nav>
+
+        <div class="badge">
+          <i><svg viewBox="5 1 14 22" preserveAspectRatio="none" aria-hidden="true"><path d="M13.9 1.6 5.5 13.6a.7.7 0 0 0 .6 1.1h4.2l-1 7.7a.7.7 0 0 0 1.25.55l8.3-12.1a.7.7 0 0 0-.6-1.1h-4.2l1-7.7a.7.7 0 0 0-1.25-.55Z" fill="rgba(16,112,152,.72)" stroke="rgba(190,236,255,.6)" stroke-width="1.6" stroke-linejoin="round"/></svg></i>
+          <b id="badgeTxt"></b>
+        </div>
+
+        <h1 class="h1 l1" id="h1a"></h1>
+        <p class="h1 l2" id="h1b"></p>
+        <p class="sub s1" id="sub1"></p>
+        <p class="sub s2" id="sub2"></p>
+        <a href="#films" class="btn cta2" id="cta2"><span id="vpLabel"></span></a>
+      </div>
+
+      <div class="showcase">
+        <div class="ring" id="ring"></div>
+
+        <div class="browser" id="browser">
+          <div class="bar">
+            <div class="dots"><i style="background:#ee5c62"></i><i style="background:#f6b719"></i><i style="background:#12c02f"></i></div>
+            <div class="omni">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>
+              <span id="omniTxt">Ramakrishna - Filmography</span>
+            </div>
+            <div class="tools">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 15v5h16v-5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+              <svg viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M12 3 3 8l9 5 9-5-9-5Z" fill="#fff" opacity=".95"/><path d="M3 13l9 5 9-5" fill="none" opacity=".55"/></svg>
+            </div>
+          </div>
+          <div class="page">
+            <div class="ann"><u>&#8249;</u><span>NOW STREAMING · TAP A POSTER TO WATCH</span><u style="left:auto;right:20px">&#8250;</u></div>
+            <div class="shoplogo"><em>RAMAKRISHNA</em><i>ACTOR · YOGA THERAPIST</i></div>
+            <div class="shopicons">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4.5 21c0-4.2 3.4-6.6 7.5-6.6s7.5 2.4 7.5 6.6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="pagebody">
+              <div class="pghero">
+                <img id="pgHeroImg" alt="Ramakrishna portrait" />
+                <div class="scrim"></div>
+                <div class="copy">
+                  <u>Actor</u>
+                  <em>Every role,<br>fully lived.</em>
+                  <a href="#films"><i>WATCH NOW</i></a>
+                </div>
+              </div>
+              <div class="pgsec"><b>Filmography</b><a href="#films"><u>see all</u></a></div>
+              <div class="pggrid" id="pggrid"></div>
+              <div class="pgstrip"><span>Actor</span><span>Yoga therapy</span><span>Pranayama</span><span>Meditation</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="wa" id="wa" href="#contact" aria-label="WhatsApp" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.36 4 14.96c0 2.3.66 4.46 1.8 6.3L4 29l7.96-1.76A12.1 12.1 0 0 0 16.04 27C22.68 27 28 21.6 28 15S22.68 3 16.04 3Zm0 21.8c-1.86 0-3.62-.5-5.14-1.38l-.36-.22-4.72 1.04 1.06-4.56-.24-.38a9.78 9.78 0 0 1-1.5-5.34c0-5.42 4.44-9.84 9.9-9.84s9.84 4.42 9.84 9.84-4.4 10.84-8.84 10.84Zm5.4-7.34c-.3-.14-1.76-.86-2.02-.96-.28-.1-.48-.14-.68.14-.2.3-.78.96-.96 1.16-.18.2-.36.22-.66.08-.3-.14-1.26-.46-2.4-1.48-.88-.8-1.48-1.76-1.66-2.06-.18-.3-.02-.46.14-.6.12-.14.3-.36.44-.54.14-.18.2-.3.3-.5.1-.2.04-.38-.02-.52-.08-.14-.68-1.62-.92-2.22-.24-.58-.5-.5-.68-.5h-.58c-.2 0-.52.08-.8.38-.28.3-1.04 1.02-1.04 2.5 0 1.46 1.06 2.88 1.22 3.08.14.2 2.1 3.2 5.08 4.48.7.3 1.26.5 1.7.62.7.22 1.36.2 1.86.12.58-.08 1.76-.72 2-1.42.26-.7.26-1.3.18-1.42-.08-.12-.28-.2-.58-.34Z"/></svg>
+    </a>
+  </section>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="section" data-shape="1">
+      <div class="about-grid">
+        <div class="about-photo reveal tilt" id="aboutCine">
+          <div class="cine">
+            <img id="aboutPhoto" alt="Ramakrishna portrait" />
+            <div class="cine-spot"></div>
+            <div class="cine-grain"></div>
+            <div class="cine-scan"></div>
+            <span class="cine-tag">REC ●</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">Two crafts.<br /><em>One discipline.</em></h2>
+          <div id="bio"></div>
+          <div class="stats">
+            <div class="stat"><strong id="statFilms">0</strong><span>Films</span></div>
+            <div class="stat"><strong>🎬</strong><span>Actor</span></div>
+            <div class="stat"><strong>🪷</strong><span>Yoga Therapist</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D FILM STRIPS -->
+    <section class="strip-section" aria-label="Photo film strip" data-shape="1">
+      <div class="filmstrip"><div class="strip-track" id="stripTrack"></div></div>
+      <div class="filmstrip reverse"><div class="strip-track" id="stripTrack2"></div></div>
+    </section>
+
+    <!-- FILMS -->
+    <section id="films" class="section" data-shape="2">
+      <div class="section-head reveal">
+        <p class="eyebrow">Filmography</p>
+        <h2 class="section-title">On <em>Screen</em></h2>
+        <p class="section-sub">Click a poster for details and where to watch.</p>
+      </div>
+      <div class="films-grid" id="filmsGrid"></div>
+    </section>
+
+    <!-- YOGA -->
+    <section id="yoga" class="section" data-shape="3">
+      <div class="section-head reveal">
+        <p class="eyebrow">Yoga Therapy</p>
+        <h2 class="section-title">Breath. Body. <em>Balance.</em></h2>
+        <p class="section-sub" id="yogaIntro"></p>
+      </div>
+      <div class="yoga-grid" id="yogaGrid"></div>
+      <div class="yoga-cta reveal">
+        <a href="#contact" class="btn btn-flow"><span>Book a session</span></a>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section" data-shape="4">
+      <div class="section-head reveal">
+        <p class="eyebrow">Gallery</p>
+        <h2 class="section-title">Moments in <em>Frame</em></h2>
+        <p class="section-sub">Drag to spin. Click a photo to enlarge.</p>
+      </div>
+      <div class="carousel-stage reveal" id="carouselStage">
+        <div class="carousel" id="carousel"></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="round-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+        <button class="round-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact" data-shape="0">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+        <p class="section-sub">For film roles, collaborations, or yoga therapy sessions.</p>
+        <div class="contact-links" id="contactLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Ramakrishna · Actor &amp; Yoga Therapist</p>
+  </footer>
+
+  <!-- Movie modal -->
+  <div class="modal" id="movieModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="modal-poster"><img id="mPoster" alt="" /></div>
+      <div class="modal-info">
+        <p class="eyebrow" id="mMeta"></p>
+        <h3 id="mTitle"></h3>
+        <p class="m-role" id="mRole"></p>
+        <p id="mDesc"></p>
+        <a id="mLink" class="btn btn-flow" target="_blank" rel="noopener"><span>▶ Watch now</span></a>
+        <p class="m-nolink" id="mNoLink">Watch link coming soon</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="modal-close" data-close aria-label="Close">&times;</button>
+    <img id="lbImg" alt="" />
+    <p id="lbCaption"></p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
+</body>
+</html>
