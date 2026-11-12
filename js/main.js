@@ -1,4 +1,4 @@
-/* Ramakrishna Portfolio: site logic.
+/* RamaRaju Portfolio: site logic.
    Content lives in js/data.js; you shouldn't need to edit this file. */
 (function () {
   "use strict";
@@ -13,7 +13,7 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   function placeholder(label, w = 400, h = 600) {
-    const initials = String(label).split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "RK";
+    const initials = String(label).split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || "RR";
     const svg =
       `<svg xmlns='http://www.w3.org/2000/svg' width='${w}' height='${h}' viewBox='0 0 ${w} ${h}'>` +
       `<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#123048'/><stop offset='1' stop-color='#05080f'/></linearGradient></defs>` +
@@ -236,6 +236,23 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
 
   // compact top bar shows once the hero has scrolled away
+  /* ---------------- dark / light theme ---------------- */
+  const root = document.documentElement;
+  const isLight = () => root.getAttribute("data-theme") === "light";
+  function syncToggles() {
+    document.querySelectorAll("[data-theme-toggle]").forEach((b) =>
+      b.setAttribute("aria-label", isLight() ? "Switch to dark theme" : "Switch to light theme"));
+  }
+  document.querySelectorAll("[data-theme-toggle]").forEach((b) => b.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const next = isLight() ? "dark" : "light";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("rr-theme", next); } catch (err) { /* private mode: theme just won't persist */ }
+    syncToggles();
+    window.dispatchEvent(new Event("themechange"));
+  }));
+  syncToggles();
+
   const topbar = $("#topbar");
   new IntersectionObserver(([en]) => topbar.classList.toggle("show", !en.isIntersecting), { threshold: 0.15 })
     .observe($("#home"));
@@ -348,11 +365,17 @@
 
   const positions = new Float32Array(shapes[0]);
   const colors = new Float32Array(COUNT * 3);
-  const palette = [new THREE.Color("#3fe3ff"), new THREE.Color("#14a8c6"), new THREE.Color("#ffffff"), new THREE.Color("#5b8cff")];
-  for (let i = 0; i < COUNT; i++) {
-    const col = palette[Math.random() < 0.5 ? 0 : Math.floor(Math.random() * palette.length)];
-    colors.set([col.r, col.g, col.b], i * 3);
+  const PALETTES = {
+    dark: ["#3fe3ff", "#14a8c6", "#ffffff", "#5b8cff"].map((c) => new THREE.Color(c)),
+    light: ["#0596b3", "#0d3a63", "#14a8c6", "#3a5bd9"].map((c) => new THREE.Color(c))
+  };
+  const pick = new Uint8Array(COUNT);
+  for (let i = 0; i < COUNT; i++) pick[i] = Math.random() < 0.5 ? 0 : Math.floor(Math.random() * 4);
+  function paint(theme) {
+    const pal = PALETTES[theme];
+    for (let i = 0; i < COUNT; i++) { const col = pal[pick[i]]; colors.set([col.r, col.g, col.b], i * 3); }
   }
+  paint(isLight() ? "light" : "dark");
   const geo = new THREE.BufferGeometry();
   geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
   geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
@@ -384,6 +407,19 @@
   dustGeo.setAttribute("position", new THREE.BufferAttribute(dust, 3));
   const dustPts = new THREE.Points(dustGeo, new THREE.PointsMaterial({ size: 0.05, color: 0xa9aeb5, transparent: true, opacity: 0.35, depthWrite: false }));
   scene.add(dustPts);
+
+  // additive glow vanishes on a light page, so light mode uses normal blending and darker dots
+  function applyParticleTheme() {
+    const light = isLight();
+    paint(light ? "light" : "dark");
+    geo.attributes.color.needsUpdate = true;
+    mat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
+    mat.opacity = light ? 0.6 : 0.85;
+    mat.needsUpdate = true;
+    dustPts.material.color.set(light ? 0x4a5563 : 0xa9aeb5);
+  }
+  applyParticleTheme();
+  window.addEventListener("themechange", applyParticleTheme);
 
   let current = 0, target = shapes[0];
   const mouse = { x: 0, y: 0 }, smooth = { x: 0, y: 0 };

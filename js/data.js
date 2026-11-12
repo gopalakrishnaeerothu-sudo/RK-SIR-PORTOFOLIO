@@ -1,5 +1,5 @@
 /* =====================================================================
-   RAMAKRISHNA PORTFOLIO — CONTENT FILE
+   RAMARAJU PORTFOLIO — CONTENT FILE
    ---------------------------------------------------------------------
    This is the ONLY file you need to edit to update the website.
 
@@ -13,7 +13,7 @@
    ===================================================================== */
 
 const SITE = {
-  name: "Ramakrishna",
+  name: "RamaRaju",
   roles: ["Actor", "Yoga Therapist", "Storyteller", "Wellness Guide"],
   tagline: "Bringing stories to life on screen, and balance to life off it.",
 
@@ -27,7 +27,7 @@ const SITE = {
 
   // About text: each line becomes a paragraph. Replace with his real story.
   bio: [
-    "Ramakrishna is an actor and yoga therapist whose work moves between two worlds: the camera and the mat.",
+    "RamaRaju is an actor and yoga therapist whose work moves between two worlds: the camera and the mat.",
     "On screen, he brings honesty and presence to every character he plays. Off screen, he guides people toward better health, steadier breath, and a calmer mind through therapeutic yoga.",
     "Both crafts rest on the same foundation: awareness of the body, control of the breath, and the discipline to stay fully present."
   ],
@@ -35,7 +35,7 @@ const SITE = {
   // Text on the first (3D hero) screen
   hero: {
     badge: "Actor on screen · Healer on the mat",
-    line1: "Ramakrishna",
+    line1: "RamaRaju",
     line2: "Actor & Yoga Therapist",
     sub1Bold: "Actor / Yoga Therapist",
     sub1: "bringing stories to life on screen,",
@@ -69,6 +69,15 @@ const SITE = {
             leave "" if there is no link yet
    --------------------------------------------------------------------- */
 const MOVIES = [
+  {
+    title: "Anandhini",
+    year: "",            // add the release year, e.g. "2024"
+    role: "",            // his character's name
+    language: "",        // e.g. "Telugu"
+    poster: "images/movies/anandhini.jpg",
+    link: "",            // where to watch it
+    description: "Add a short description of the film and his role."
+  },
   {
     title: "Movie Title One",
     year: "2024",

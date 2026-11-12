@@ -1,4 +1,4 @@
-# Ramakrishna: Actor & Yoga Therapist Portfolio
+# RamaRaju: Actor & Yoga Therapist Portfolio
 
 A 3D portfolio website. Open `index.html` in a browser to view it. It needs no install or build step.
 

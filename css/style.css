@@ -126,7 +126,7 @@ main { background: linear-gradient(180deg, rgba(25,127,255,.03), transparent 30%
 .film-shine { position: absolute; inset: 0; z-index: 3; pointer-events: none; border-radius: var(--radius);
   background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(150,235,255,.2), transparent 50%); opacity: 0; transition: opacity .3s; }
 .film-card:hover .film-shine { opacity: 1; }
-.film-info { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 20px; transform: translateZ(50px); }
+.film-info { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 20px; transform: translateZ(24px); }
 .film-info h3 { font-family: var(--display); font-size: 1.45rem; line-height: 1.15; }
 .film-info p { font-size: .8rem; color: var(--muted); margin-top: 4px; }
 .film-year { position: absolute; top: 14px; right: 14px; z-index: 2; padding: 4px 12px; border-radius: 99px; font-size: .74rem; font-weight: 600;
@@ -213,3 +213,36 @@ main { background: linear-gradient(180deg, rgba(25,127,255,.03), transparent 30%
   .reveal { opacity: 1; transform: none; }
   .strip-track, .cine-grain, .cine-scan, .cine-tag { animation: none; }
 }
+
+/* =====================================================================
+   LIGHT THEME (toggle in the nav; saved per visitor)
+   ===================================================================== */
+html[data-theme="light"] {
+  --bg: #eef3f7;
+  --bg-2: #ffffff;
+  --surface: rgba(10, 17, 29, 0.03);
+  --border: rgba(10, 17, 29, 0.12);
+  --accent: #0596b3;
+  --accent-2: #14a8c6;
+  --text: #0a111d;
+  --muted: #4a5563;
+}
+body, .topbar, .yoga-card, .contact-card, .modal-box, .stat { transition: background-color .4s ease, color .4s ease, border-color .4s ease; }
+.tb-toggle { flex: none; width: 32px; height: 32px; }
+html[data-theme="light"] .topbar { background: rgba(255, 255, 255, .78); box-shadow: 0 8px 30px rgba(10,17,29,.06); }
+html[data-theme="light"] .tb-links a, html[data-theme="light"] .tb-logo { color: var(--text); }
+html[data-theme="light"] .tb-links a:hover { background: rgba(10,17,29,.06); }
+html[data-theme="light"] main { background: linear-gradient(180deg, rgba(25,127,255,.05), transparent 30%); }
+html[data-theme="light"] .about-photo .cine, html[data-theme="light"] .film-poster { box-shadow: 0 30px 60px rgba(10,17,29,.18); }
+.film-info, .carousel-item figcaption { color: #fff; }
+html[data-theme="light"] .yoga-card { background: linear-gradient(to top, rgba(20,168,198,.14) 0, rgba(20,168,198,.04) 18px, #ffffff 60px); box-shadow: 0 12px 30px rgba(10,17,29,.06); }
+html[data-theme="light"] .stat { background: linear-gradient(to top, rgba(20,168,198,.14) 0, rgba(20,168,198,.04) 14px, #ffffff 40px); }
+html[data-theme="light"] .contact-card { background: linear-gradient(to top, rgba(20,168,198,.14) 0, rgba(20,168,198,.04) 24px, rgba(255,255,255,.85) 80px); }
+html[data-theme="light"] .contact-links a:hover { color: var(--accent); }
+html[data-theme="light"] .round-btn { color: var(--text); }
+html[data-theme="light"] .filmstrip { box-shadow: 0 30px 60px rgba(10,17,29,.25); }
+html[data-theme="light"] .carousel-item { box-shadow: 0 24px 46px rgba(10,17,29,.22); }
+html[data-theme="light"] .modal-backdrop { background: rgba(238,243,247,.85); }
+html[data-theme="light"] .modal-box { background: #ffffff; }
+html[data-theme="light"] .modal .modal-close { color: var(--text); }
+html[data-theme="light"] .footer { color: var(--muted); }
