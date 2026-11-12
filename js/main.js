@@ -40,6 +40,26 @@
   setImg($("#aboutPhoto"), SITE.aboutPhoto, SITE.name, 400, 500);
   $("#bio").innerHTML = SITE.bio.map((p) => `<p>${esc(p)}</p>`).join("");
   $("#statFilms").textContent = MOVIES.length;
+  $("#facts").innerHTML = FACTS.filter((f) => f.value)
+    .map((f) => `<div class="fact"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
+
+  // The Craft: actor / writer / yoga therapist
+  $("#craftGrid").innerHTML = CRAFT.map((c, i) => `
+    <article class="craft-card reveal" style="transition-delay:${i * 0.1}s">
+      <span class="craft-icon">${esc(c.icon)}</span>
+      <h3>${esc(c.title)}</h3>
+      <p>${esc(c.text)}</p>
+      <ul>${c.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+    </article>`).join("");
+
+  // Short films
+  $("#shortGrid").innerHTML = SHORT_FILMS.map((s) => {
+    const meta = [s.year, s.role && "as " + s.role].filter(Boolean).join(" · ") || "Short film";
+    const inner = `<span class="short-icon">🎞️</span><div><strong>${esc(s.title)}</strong><small>${esc(meta)}</small></div>${s.link ? '<span class="short-play">▶</span>' : ""}`;
+    return s.link
+      ? `<a class="short-card" href="${esc(s.link)}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="short-card">${inner}</div>`;
+  }).join("");
 
   // shared with hero.js
   window.RK = { esc, setImg, placeholder, openMovie: (m) => openMovie(m) };

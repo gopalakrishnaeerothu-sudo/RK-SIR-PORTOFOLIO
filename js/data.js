@@ -13,9 +13,10 @@
    ===================================================================== */
 
 const SITE = {
-  name: "RamaRaju",
-  roles: ["Actor", "Yoga Therapist", "Storyteller", "Wellness Guide"],
-  tagline: "Bringing stories to life on screen, and balance to life off it.",
+  name: "Ramakrishna Raju Oruganti",
+  shortName: "RamaRaju",
+  roles: ["Actor", "Writer", "Yoga Therapist"],
+  tagline: "Emotion in every look, every line, every breath.",
 
   // Main photo shown in the 3D frame at the top of the page
   // (colour photo: black jacket, garden)
@@ -27,32 +28,33 @@ const SITE = {
 
   // About text: each line becomes a paragraph. Replace with his real story.
   bio: [
-    "RamaRaju is an actor and yoga therapist whose work moves between two worlds: the camera and the mat.",
-    "On screen, he brings honesty and presence to every character he plays. Off screen, he guides people toward better health, steadier breath, and a calmer mind through therapeutic yoga.",
-    "Both crafts rest on the same foundation: awareness of the body, control of the breath, and the discipline to stay fully present."
+    "Ramakrishna Raju Oruganti is an actor, writer and yoga therapist whose work spans Telugu, Tamil and Kannada cinema, from Pelli Choopulu and Killing Veerappan to Dear Comrade, Gaddalakonda Ganesh and Dasara.",
+    "As an actor, he is drawn to the scenes that carry the weight of a story. He does not perform emotion; he lives it. His strongest instrument is his eyes: a single look can hold grief, longing, anger or hope before a word is spoken, which is why he is trusted with the moments that have to land.",
+    "As a writer, he writes dialogue the way people actually feel: honest, emotional lines that stay with an audience long after the scene ends.",
+    "Away from the camera, he is a yoga therapist with a Bachelor of Physical Education. The same awareness of breath and body that guides his students also grounds every role he plays."
   ],
 
   // Text on the first (3D hero) screen
   hero: {
     hello: "Hi, I'm RamaRaju",                    // giant heading on the first screen
     cutout: "images/profile/hero-cutout.webp",     // cut-out portrait standing over the 3D wheel
-    tagline1: "Actor on screen, yoga therapist",
-    tagline2: "off it: stories, breath & balance",
+    tagline1: "Actor · Writer · Yoga therapist",
+    tagline2: "emotion in every look, line & breath",
     navCta: "Book a session",
     heroCta: "Watch films"
   },
 
   // Yoga section intro
   yogaIntro:
-    "Personalised yoga therapy that meets you where you are, whether you're recovering from strain, managing stress, or simply looking to feel at home in your body again.",
+    "Personalised yoga therapy grounded in a Bachelor of Physical Education: sessions that meet you where you are, whether you are recovering from strain, managing stress, or simply looking to feel at home in your body again.",
 
   // Contact details: leave "" for anything you don't want shown
   contact: {
-    email: "",          // e.g. "ramaraju@email.com"
+    email: "ramoruganti@gmail.com",
     // Both numbers are on WhatsApp: each gets a Call button and a WhatsApp button.
     // Write them with the country code, e.g. "+91 98765 43210".
     // (A plain 10-digit number is treated as Indian and gets +91 added for WhatsApp.)
-    phones: ["", ""],
+    phones: ["+91 98666 78844", "+91 94416 88434"],
     instagram: "",      // full link, e.g. "https://instagram.com/username"
     youtube: "",        // full link
     facebook: "",       // full link
@@ -232,6 +234,47 @@ const GALLERY = [
   { src: "images/gallery/police-role.jpg", caption: "Police role" },
   { src: "images/gallery/character-look.jpg", caption: "Look test" },
   { src: "images/gallery/on-set-2.jpg", caption: "Behind the scenes" }
+];
+
+/* ---------------------------------------------------------------------
+   PROFILE FACTS (shown in About)
+   --------------------------------------------------------------------- */
+const FACTS = [
+  { label: "Full name", value: "Ramakrishna Raju Oruganti" },
+  { label: "Born", value: "22 May 1986" },
+  { label: "Education", value: "B.Com (Computers) · Bachelor of Physical Education" },
+  { label: "Work", value: "Actor · Writer · Yoga Therapist" }
+];
+
+/* ---------------------------------------------------------------------
+   THE CRAFT (three cards: what he brings to each role)
+   --------------------------------------------------------------------- */
+const CRAFT = [
+  {
+    icon: "🎭",
+    title: "Actor",
+    text: "An emotional actor at heart. He lives inside a scene instead of performing it.",
+    points: ["Emotional and dramatic scenes", "Eye acting: whole feelings in a single look", "Grounded, believable characters"]
+  },
+  {
+    icon: "✍️",
+    title: "Writer",
+    text: "Writes emotional dialogue that sounds the way people truly feel.",
+    points: ["Heart-touching emotional dialogues", "Honest, natural conversations", "Lines written to be felt, not just heard"]
+  },
+  {
+    icon: "🪷",
+    title: "Yoga Therapist",
+    text: "Brings a Bachelor of Physical Education to therapeutic yoga.",
+    points: ["Therapeutic yoga & posture", "Pranayama and breathwork", "Body awareness that feeds his acting"]
+  }
+];
+
+/* ---------------------------------------------------------------------
+   SHORT FILMS (add year / link / poster when available)
+   --------------------------------------------------------------------- */
+const SHORT_FILMS = [
+  { title: "Happy Valentine's Day", year: "", role: "", link: "", poster: "" }
 ];
 
 /* ---------------------------------------------------------------------

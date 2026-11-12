@@ -63,7 +63,7 @@
     { v: "frete", url: P() },
     { v: "plain", url: P(), t: "THE ACTOR" },
     { v: "power", url: P() },
-    { v: "plain", url: P(), t: "ON SET" },
+    { v: "plain", url: P(), t: "THE WRITER" },
     { v: "off", url: P() },
     { v: "plain", url: P(), t: "YOGA THERAPY" }
   ];
@@ -100,7 +100,7 @@
       case "brand": return `
         <div class="fill" style="background:linear-gradient(180deg,#0a2a4a,#0d3a63 50%,#08192b)"></div>
         <div class="ph" style="top:92px;bottom:0">${im}<div class="fill" style="background:linear-gradient(180deg,rgba(10,42,74,.98),rgba(10,42,74,0) 36%)"></div></div>
-        <div class="cv" style="top:16px;font-size:4.2px;line-height:1.7;color:rgba(255,255,255,.82);width:74px">Two crafts, one discipline: awareness of the body, control of the breath, and the presence to live every moment fully.</div>
+        <div class="cv" style="top:16px;font-size:4.2px;line-height:1.7;color:rgba(255,255,255,.82);width:74px">Actor, writer, yoga therapist: emotion in the eyes, truth in the words, calm in the breath.</div>
         <div style="position:absolute;right:10px;top:16px;font-size:5.4px;font-weight:600;color:#fff;opacity:.92">✳ RR</div>`;
       case "frete": return `
         <div class="fill" style="background:linear-gradient(158deg,#4a0c80 0%,#7a16a6 40%,#a81fc6 66%,#5c0e90 100%)"></div>
