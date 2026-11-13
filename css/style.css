@@ -344,3 +344,30 @@ html[data-theme="light"] .asana-card { box-shadow: 0 16px 34px rgba(10,17,29,.16
 @media (max-width: 760px) { .asana-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .asana-info strong { font-size: 1.05rem; } .asana-card.feature .asana-info strong { font-size: 1.6rem; } }
 .asana-card.tail { grid-column: span 2; aspect-ratio: auto; }
 .asana-card.tail img { object-position: 50% 36%; }
+
+/* =====================================================================
+   QUALIFICATIONS · AWARDS
+   ===================================================================== */
+.quals { margin-top: 26px; }
+.quals-title { font-size: .7rem !important; letter-spacing: .25em; text-transform: uppercase; color: var(--accent) !important; font-weight: 600; margin: 0 0 10px !important; }
+.quals-list { list-style: none; counter-reset: q; display: grid; gap: 8px; }
+.quals-list li { counter-increment: q; display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--surface); }
+.quals-list li::before { content: counter(q, decimal-leading-zero); font-family: var(--display); font-size: 1.1rem; color: var(--accent); min-width: 26px; }
+.quals-list strong { font-weight: 600; font-size: .95rem; }
+.quals-list span { margin-left: auto; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: right; }
+
+.awards { margin-top: 70px; text-align: center; }
+.awards-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.award-card { display: flex; align-items: center; gap: 16px; min-width: 280px; padding: 20px 26px; border-radius: 18px; text-align: left;
+  border: 1px solid rgba(255, 200, 80, .35);
+  background: linear-gradient(135deg, rgba(255, 200, 80, .12), rgba(255, 255, 255, .02) 60%);
+  box-shadow: 0 0 0 1px rgba(255, 200, 80, .05), 0 18px 40px rgba(0,0,0,.35); }
+.award-icon { font-size: 2.2rem; filter: drop-shadow(0 0 12px rgba(255, 200, 80, .55)); }
+.award-card strong { display: block; font-family: var(--display); font-size: 1.4rem; }
+.award-card small { color: var(--muted); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; }
+html[data-theme="light"] .award-card { background: linear-gradient(135deg, rgba(255, 190, 60, .2), #fff 60%); box-shadow: 0 12px 30px rgba(10,17,29,.08); }
+.short-awards { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.short-awards i { font-style: normal; font-size: .7rem; font-weight: 600; letter-spacing: .06em; padding: 3px 9px; border-radius: 99px;
+  color: #ffd76a; border: 1px solid rgba(255, 200, 80, .4); background: rgba(255, 200, 80, .08); }
+html[data-theme="light"] .short-awards i { color: #8a5a00; }

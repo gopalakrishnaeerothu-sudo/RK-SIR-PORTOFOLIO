@@ -31,7 +31,7 @@ const SITE = {
     "Ramakrishna Raju Oruganti is an actor, writer and yoga therapist whose work spans Telugu, Tamil and Kannada cinema, from Pelli Choopulu and Killing Veerappan to Dear Comrade, Gaddalakonda Ganesh and Dasara.",
     "As an actor, he is drawn to the scenes that carry the weight of a story. He does not perform emotion; he lives it. His strongest instrument is his eyes: a single look can hold grief, longing, anger or hope before a word is spoken, which is why he is trusted with the moments that have to land.",
     "As a writer, he writes dialogue the way people actually feel: honest, emotional lines that stay with an audience long after the scene ends.",
-    "Away from the camera, he is a yoga therapist with a Bachelor of Physical Education. The same awareness of breath and body that guides his students also grounds every role he plays."
+    "Away from the camera, he is a yoga therapist with an M.Sc in Yoga Therapy, a PG Diploma in Yoga and teacher training, built on a Bachelor of Physical Education. The same awareness of breath and body that guides his students also grounds every role he plays."
   ],
 
   // Text on the first (3D hero) screen
@@ -46,7 +46,7 @@ const SITE = {
 
   // Yoga section intro
   yogaIntro:
-    "Personalised yoga therapy grounded in a Bachelor of Physical Education: sessions that meet you where you are, whether you are recovering from strain, managing stress, or simply looking to feel at home in your body again.",
+    "Personalised yoga therapy grounded in an M.Sc in Yoga Therapy and a PG Diploma in Yoga: sessions that meet you where you are, whether you are recovering from strain, managing stress, or simply looking to feel at home in your body again.",
 
   // Contact details: leave "" for anything you don't want shown
   contact: {
@@ -103,7 +103,7 @@ const MOVIES = [
     cast: "Aishwarya Rajesh, Rajendra Prasad",
     watchOn: "Sun NXT",
     link: "",            // paste the exact watch URL here to show a Watch button
-    poster: "images/movies/kousalya-krishnamurthy.jpg",
+    poster: "images/gallery/kousalya-poster.jpg",   // official poster featuring him (right, with bat)
     description: "Telugu sports drama starring Aishwarya Rajesh, Rajendra Prasad."
   },
   {
@@ -129,6 +129,18 @@ const MOVIES = [
     link: "",            // paste the exact watch URL here to show a Watch button
     poster: "images/movies/ruler.jpg",
     description: "Telugu action drama starring Nandamuri Balakrishna, Vedhika, Sonal Chauhan."
+  },
+  {
+    title: "RDX Love",
+    year: "2019",
+    language: "Telugu",
+    genre: "Romantic Action Drama",
+    role: "",            // his character name
+    cast: "Tejus Kancherla, Payal Rajput",
+    watchOn: "",
+    link: "",            // paste the exact watch URL here to show a Watch button
+    poster: "images/movies/rdx-love.jpg",
+    description: "Telugu romantic action drama directed by Shankar Bhanu, starring Tejus Kancherla and Payal Rajput."
   },
   {
     title: "Devadas",
@@ -222,6 +234,10 @@ const MOVIES = [
    caption : optional text
    --------------------------------------------------------------------- */
 const GALLERY = [
+  { src: "images/gallery/denim-street.jpg", caption: "Street style" },
+  { src: "images/gallery/red-vest.jpg", caption: "Character look" },
+  { src: "images/gallery/white-kurta.jpg", caption: "Festive look" },
+  { src: "images/gallery/kousalya-poster.jpg", caption: "Kousalya Krishnamurthy" },
   { src: "images/profile/hero.jpg", caption: "Portrait" },
   { src: "images/gallery/police-field.jpg", caption: "In uniform" },
   { src: "images/gallery/arddhanaari-collage.jpg", caption: "Arddhanaari" },
@@ -239,10 +255,29 @@ const GALLERY = [
 /* ---------------------------------------------------------------------
    PROFILE FACTS (shown in About)
    --------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------
+   QUALIFICATIONS (shown in About, in order)
+   --------------------------------------------------------------------- */
+const QUALIFICATIONS = [
+  { title: "M.Sc in Yoga Therapy", type: "Postgraduate" },
+  { title: "PG Diploma in Yoga", type: "Postgraduate diploma" },
+  { title: "Teacher Training in Yoga", type: "Certification" },
+  { title: "Bachelor of Physical Education", type: "Graduate" },
+  { title: "B.Com (Computers)", type: "Graduate" }
+];
+
+/* ---------------------------------------------------------------------
+   AWARDS
+   --------------------------------------------------------------------- */
+const AWARDS = [
+  { title: "Best Actor", work: "The Artist", kind: "Short film" },
+  { title: "Best Short Film", work: "The Artist", kind: "Short film" }
+];
+
 const FACTS = [
   { label: "Full name", value: "Ramakrishna Raju Oruganti" },
   { label: "Born", value: "22 May 1986" },
-  { label: "Education", value: "B.Com (Computers) · Bachelor of Physical Education" },
+  { label: "Highest degree", value: "M.Sc in Yoga Therapy" },
   { label: "Work", value: "Actor · Writer · Yoga Therapist" }
 ];
 
@@ -265,7 +300,7 @@ const CRAFT = [
   {
     icon: "🪷",
     title: "Yoga Therapist",
-    text: "Brings a Bachelor of Physical Education to therapeutic yoga.",
+    text: "M.Sc in Yoga Therapy, PG Diploma in Yoga and certified teacher training.",
     points: ["Therapeutic yoga & posture", "Pranayama and breathwork", "Body awareness that feeds his acting"]
   }
 ];
@@ -274,7 +309,7 @@ const CRAFT = [
    SHORT FILMS (add year / link / poster when available)
    --------------------------------------------------------------------- */
 const SHORT_FILMS = [
-  { title: "The Artist", year: "", role: "", credit: "Written & directed by Jay R M", link: "", poster: "images/sets/the-artist.jpg" },
+  { title: "The Artist", year: "", role: "", credit: "Written & directed by Jay R M", awards: ["Best Actor", "Best Short Film"], link: "", poster: "images/sets/the-artist.jpg" },
   { title: "Happy Valentine's Day", year: "", role: "", credit: "", link: "", poster: "" }
 ];
 

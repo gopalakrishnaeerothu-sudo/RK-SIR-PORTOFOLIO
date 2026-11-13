@@ -43,6 +43,16 @@
   $("#facts").innerHTML = FACTS.filter((f) => f.value)
     .map((f) => `<div class="fact"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
 
+  // Qualifications (highest first)
+  $("#quals").innerHTML = QUALIFICATIONS.map((q) => `<li><strong>${esc(q.title)}</strong><span>${esc(q.type)}</span></li>`).join("");
+
+  // Awards
+  $("#awards").innerHTML = AWARDS.map((w) => `
+    <div class="award-card">
+      <span class="award-icon">🏆</span>
+      <div><strong>${esc(w.title)}</strong><small>${esc(w.work)} · ${esc(w.kind)}</small></div>
+    </div>`).join("");
+
   // The Craft: actor / writer / yoga therapist
   $("#craftGrid").innerHTML = CRAFT.map((c, i) => `
     <article class="craft-card reveal" style="transition-delay:${i * 0.1}s">
@@ -58,7 +68,7 @@
     const thumb = s.poster
       ? `<img class="short-thumb" src="${esc(s.poster)}" alt="${esc(s.title)} poster" loading="lazy">`
       : `<span class="short-icon">🎞️</span>`;
-    const inner = `${thumb}<div><strong>${esc(s.title)}</strong><small>${esc(meta)}</small>${s.credit ? `<em class="short-credit">${esc(s.credit)}</em>` : ""}</div>${s.link ? '<span class="short-play">▶</span>' : ""}`;
+    const inner = `${thumb}<div><strong>${esc(s.title)}</strong><small>${esc(meta)}</small>${s.credit ? `<em class="short-credit">${esc(s.credit)}</em>` : ""}${(s.awards || []).length ? `<span class="short-awards">${s.awards.map((x) => `<i>🏆 ${esc(x)}</i>`).join("")}</span>` : ""}</div>${s.link ? '<span class="short-play">▶</span>' : ""}`;
     return s.link
       ? `<a class="short-card" href="${esc(s.link)}" target="_blank" rel="noopener">${inner}</a>`
       : `<div class="short-card">${inner}</div>`;

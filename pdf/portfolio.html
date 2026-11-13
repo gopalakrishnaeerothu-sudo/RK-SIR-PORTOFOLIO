@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ramakrishna Raju Oruganti · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --bg:#04060c; --panel:#0b1220; --line:rgba(255,255,255,.12); --fg:#fff; --muted:#a9b3bf; --accent:#3fe3ff; --accent2:#14a8c6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--fg); font-family: Poppins, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always; break-after: page;
+    background: radial-gradient(ellipse at 50% -10%, rgba(25,127,255,.16), transparent 60%), var(--bg); padding: 16mm 15mm 14mm; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .eyebrow { font-size: 7.5pt; letter-spacing: .32em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h2 { font-family: "Playfair Display", serif; font-weight: 600; font-size: 30pt; line-height: 1.05; margin-top: 3mm; }
+  h2 em, .serif em { color: var(--accent); font-style: italic; }
+  p { color: var(--muted); font-size: 9.6pt; line-height: 1.65; }
+  .foot { position: absolute; left: 15mm; right: 15mm; bottom: 8mm; display: flex; justify-content: space-between;
+    font-size: 6.8pt; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+  .foot b { color: var(--accent); font-weight: 600; }
+
+  /* ---------- cover ---------- */
+  .cover { padding: 0; }
+  .cover .glow { position: absolute; left: 50%; top: 52%; width: 150mm; height: 150mm; translate: -50% -50%; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(63,227,255,.30), rgba(63,227,255,0)); }
+  .cover .ring { position: absolute; left: 50%; top: 86%; width: 190mm; height: 190mm; translate: -50% -50%; border-radius: 50%;
+    border: .4mm dashed rgba(63,227,255,.35); transform: rotateX(76deg); }
+  .cover .hi { position: absolute; top: 16mm; left: 0; right: 0; text-align: center; font-weight: 900; text-transform: uppercase;
+    font-size: 54pt; letter-spacing: -.02em; line-height: .9;
+    background: linear-gradient(180deg, #7fb3c8, #fff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cover .kick { position: absolute; top: 9mm; left: 0; right: 0; text-align: center; }
+  .cover .cut { position: absolute; left: 50%; bottom: 0; height: 205mm; translate: -50% 0;
+    -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
+  .cover .band { position: absolute; left: 0; right: 0; bottom: 0; padding: 30mm 15mm 12mm;
+    background: linear-gradient(transparent, rgba(4,6,12,.92) 45%, #04060c); text-align: center; }
+  .cover .name { font-family: "Playfair Display", serif; font-size: 25pt; line-height: 1.1; }
+  .cover .roles { margin-top: 3mm; font-size: 9pt; letter-spacing: .38em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .cover .contact { margin-top: 5mm; font-size: 8.4pt; color: var(--muted); letter-spacing: .04em; }
+
+  /* ---------- about ---------- */
+  .about-grid { display: grid; grid-template-columns: 62mm 1fr; gap: 9mm; margin-top: 8mm; }
+  .about-photo { width: 62mm; height: 84mm; border-radius: 30mm 30mm 4mm 4mm; overflow: hidden; border: .3mm solid var(--line); }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; filter: grayscale(1) contrast(1.1); }
+  .bio p + p { margin-top: 3mm; }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-top: 6mm; }
+  .fact { border: .3mm solid var(--line); border-radius: 3mm; padding: 3mm 4mm; background: rgba(255,255,255,.025); }
+  .fact small { display: block; font-size: 6.6pt; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .fact span { font-size: 9pt; }
+  .craft { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4mm; margin-top: 6mm; }
+  .craft div { border: .3mm solid var(--line); border-radius: 4mm; padding: 4mm 4.5mm;
+    background: linear-gradient(to top, rgba(63,227,255,.10), rgba(255,255,255,.015) 40%); }
+  .craft h3 { font-family: "Playfair Display", serif; font-size: 14pt; margin: 1.5mm 0 1.5mm; }
+  .craft li { list-style: none; font-size: 8.2pt; color: #dfe6ec; padding-left: 3.5mm; position: relative; margin-top: 1.4mm; line-height: 1.45; }
+  .craft li::before { content: ""; position: absolute; left: 0; top: 1.6mm; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--accent); }
+  .craft .ic { font-size: 15pt; }
+
+  /* ---------- films ---------- */
+  .films { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4.5mm 3mm; margin-top: 7mm; }
+  .film .poster { aspect-ratio: 2/3; border-radius: 2.5mm; overflow: hidden; border: .3mm solid var(--line); background: linear-gradient(150deg,#123048,#05080f); position: relative; }
+  .film .poster img { width: 100%; height: 100%; object-fit: cover; }
+  .film .ph { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 2mm; color: var(--accent); }
+  .film .ph b { font-family: "Playfair Display", serif; font-size: 16pt; }
+  .film .ph i { font-style: normal; font-size: 6pt; letter-spacing: .2em; color: var(--muted); }
+  .film .yr { position: absolute; top: 2mm; right: 2mm; font-size: 6.5pt; font-weight: 600; padding: .8mm 2.2mm; border-radius: 9mm; background: rgba(4,6,12,.75); color: var(--accent); }
+  .film h4 { font-size: 7.8pt; font-weight: 600; margin-top: 2mm; line-height: 1.25; }
+  .film small { display: block; font-size: 6.2pt; color: var(--muted); margin-top: .5mm; }
+  .shorts { display: flex; gap: 4mm; margin-top: 5mm; }
+  .films-note { margin-top: 9mm; }
+  .short { flex: 1; display: flex; align-items: center; gap: 4mm; border: .3mm solid var(--line); border-radius: 3mm; padding: 3mm; background: rgba(255,255,255,.025); }
+  .short img { width: 34mm; aspect-ratio: 16/9; object-fit: cover; border-radius: 2mm; }
+  .short .noimg { width: 34mm; aspect-ratio: 16/9; border-radius: 2mm; display: grid; place-items: center; background: linear-gradient(150deg,#123048,#05080f); font-size: 16pt; }
+  .short b { font-family: "Playfair Display", serif; font-size: 11.5pt; display: block; }
+  .short small { font-size: 7pt; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+
+  .pull { margin-top: 14mm; padding: 8mm 10mm; border-left: .8mm solid var(--accent); background: rgba(63,227,255,.05); border-radius: 0 4mm 4mm 0;
+    font-family: "Playfair Display", serif; font-size: 15pt; line-height: 1.45; color: #e8eef3; }
+  .pull em { color: var(--accent); }
+
+  .quals { margin-top: 6mm; }
+  .quals ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 2.2mm 4mm; margin-top: 2.5mm; }
+  .quals li { display: flex; align-items: baseline; gap: 2mm; font-size: 8.6pt; border-bottom: .3mm solid var(--line); padding: 1.6mm 0; }
+  .quals li span { margin-left: auto; font-size: 6.4pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .awards { display: flex; gap: 4mm; margin-top: 3mm; }
+  .award { flex: 1; display: flex; align-items: center; gap: 3.5mm; padding: 3.5mm 5mm; border-radius: 3mm;
+    border: .3mm solid rgba(255,200,80,.45); background: linear-gradient(135deg, rgba(255,200,80,.14), rgba(255,255,255,.02) 60%); }
+  .award span { font-size: 16pt; }
+  .award b { display: block; font-family: "Playfair Display", serif; font-size: 12.5pt; }
+  .award small { font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .short .aw { display: block; font-style: normal; font-size: 7pt; color: #ffd76a; margin-top: 1mm; }
+  .portraits { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 112mm 112mm; gap: 4mm; margin-top: 7mm; }
+  .portraits figure { position: relative; border-radius: 3mm; overflow: hidden; border: .3mm solid var(--line); }
+  .portraits img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+
+  /* ---------- photo grids ---------- */
+  .sets { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 51mm); grid-auto-flow: dense; gap: 3.5mm; margin-top: 7mm; }
+  .sets figure, .asanas figure { position: relative; border-radius: 3mm; overflow: hidden; border: .3mm solid var(--line); }
+  .sets img, .asanas img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+  .sets figure.tall { grid-row: span 2; }
+  .sets figure.wide { grid-column: span 2; }
+  figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 7mm 3mm 2.4mm; font-size: 6.6pt; letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600; background: linear-gradient(transparent, rgba(2,6,14,.88)); }
+  .asanas { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 56mm; gap: 3.5mm; margin-top: 6mm; }
+  .asanas figure.feature { grid-column: span 2; grid-row: span 2; }
+  .asanas figcaption b { display: block; font-family: "Playfair Display", serif; font-size: 10.5pt; letter-spacing: 0; text-transform: none; }
+  .asanas .feature figcaption b { font-size: 16pt; }
+  .services { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 6mm; margin-top: 7mm; }
+  .services div { display: flex; gap: 3mm; }
+  .services strong { font-size: 9pt; display: block; }
+  .services span { font-size: 7.8pt; color: var(--muted); line-height: 1.5; }
+  .services .ic { font-size: 13pt; }
+
+  /* ---------- contact ---------- */
+  .contact-page { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .avatar { width: 52mm; height: 52mm; border-radius: 50%; overflow: hidden; border: 1.2mm solid #04060c; box-shadow: 0 0 0 .4mm rgba(63,227,255,.6), 0 0 18mm rgba(63,227,255,.35); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+  .contact-page h2 { font-size: 40pt; margin-top: 9mm; }
+  .lines { margin-top: 9mm; display: grid; gap: 3.2mm; }
+  .lines a, .lines span { display: inline-flex; align-items: center; justify-content: center; gap: 3mm; color: #fff; text-decoration: none; font-size: 11pt;
+    border: .3mm solid var(--line); border-radius: 20mm; padding: 3mm 9mm; background: rgba(255,255,255,.03); min-width: 110mm; }
+  .lines em { font-style: normal; color: var(--accent); font-size: 7.4pt; letter-spacing: .2em; text-transform: uppercase; }
+  .site { margin-top: 10mm; font-size: 8.6pt; color: var(--muted); }
+  .site a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div id="doc"></div>
+
+<script src="../js/data.js"></script>
+<script>
+(function () {
+  const SITE_URL = "https://ramaraju-portfolio-official.vercel.app";
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const img = (p) => "../" + p;
+  const c = SITE.contact;
+  const phones = (c.phones || []).filter(Boolean);
+  let n = 0;
+  const foot = (label) => `<div class="foot"><span>Ramakrishna Raju Oruganti · <b>${label}</b></span><span>${String(++n).padStart(2, "0")}</span></div>`;
+
+  const posterFile = (m) => m.poster.split("/").pop().replace(".jpg", "");
+
+  const pages = [];
+
+  /* 1. COVER */
+  n++;
+  pages.push(`<section class="page cover">
+    <div class="glow"></div><div class="ring"></div>
+    <div class="kick eyebrow">Portfolio</div>
+    <div class="hi">Hi, I'm<br>RamaRaju</div>
+    <img class="cut" src="${img(SITE.hero.cutout)}" alt="">
+    <div class="band">
+      <div class="name">Ramakrishna Raju Oruganti</div>
+      <div class="roles">Actor · Yoga Therapist</div>
+      <div class="contact">${esc(c.email)} &nbsp;·&nbsp; ${phones.map(esc).join(" &nbsp;·&nbsp; ")}</div>
+    </div>
+  </section>`);
+
+  /* 2. ABOUT + CRAFT */
+  pages.push(`<section class="page">
+    <div class="eyebrow">About</div>
+    <h2>Two crafts.<br><em>One heart.</em></h2>
+    <div class="about-grid">
+      <div class="about-photo"><img src="${img(SITE.aboutPhoto)}" alt=""></div>
+      <div class="bio">${SITE.bio.filter((p) => !/^As a writer/i.test(p)).map((p) => `<p>${esc(p.replace("an actor, writer and yoga therapist", "an actor and yoga therapist"))}</p>`).join("")}</div>
+    </div>
+    <div class="facts">${FACTS.filter((f) => f.value).map((f) => f.label === "Work" ? { label: f.label, value: "Actor · Yoga Therapist" } : f).map((f) => `<div class="fact"><small>${esc(f.label)}</small><span>${esc(f.value)}</span></div>`).join("")}</div>
+    <div class="quals"><div class="eyebrow">Qualifications</div><ol>${QUALIFICATIONS.map((q) => `<li><b>${esc(q.title)}</b><span>${esc(q.type)}</span></li>`).join("")}</ol></div>
+    <div class="craft">${CRAFT.filter((k) => k.title !== "Writer").map((k) => `<div><span class="ic">${k.icon}</span><h3>${esc(k.title)}</h3><ul>${k.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul></div>`).join("")}</div>
+    ${foot("About")}
+  </section>`);
+
+  /* 3. FILMOGRAPHY */
+  pages.push(`<section class="page">
+    <div class="eyebrow">Filmography</div>
+    <h2>On <em>Screen</em></h2>
+    <div class="films">${MOVIES.map((m) => {
+      const f = posterFile(m);
+      const art = f !== "anandhini"
+        ? `<img src="${img(m.poster)}" alt="">`
+        : `<div class="ph"><b>${esc(m.title.split(/\s+/).map((w) => w[0]).join("").slice(0, 2))}</b><i>POSTER COMING SOON</i></div>`;
+      const meta = [m.language, m.genre].filter(Boolean).join(" · ") || "Details to be added";
+      return `<div class="film"><div class="poster">${art}${m.year ? `<span class="yr">${esc(m.year)}</span>` : ""}</div><h4>${esc(m.title)}</h4><small>${esc(meta)}</small></div>`;
+    }).join("")}</div>
+    <div class="eyebrow films-note">Awards</div>
+    <div class="awards">${AWARDS.map((w) => `<div class="award"><span>🏆</span><div><b>${esc(w.title)}</b><small>${esc(w.work)} · ${esc(w.kind)}</small></div></div>`).join("")}</div>
+    <div class="eyebrow films-note" style="margin-top:6mm">Short films</div>
+    <div class="shorts">${SHORT_FILMS.map((s) => `<div class="short">${s.poster ? `<img src="${img(s.poster)}" alt="">` : `<div class="noimg">🎞️</div>`}<div><b>${esc(s.title)}</b><small>${esc(s.credit || "Short film")}</small>${(s.awards || []).length ? `<em class="aw">${s.awards.map((x) => "🏆 " + esc(x)).join(" &nbsp; ")}</em>` : ""}</div></div>`).join("")}</div>
+    <blockquote class="pull" style="margin-top:8mm;font-size:12.5pt;padding:6mm 8mm">“He does not perform emotion; <em>he lives it.</em> A single look can hold grief, longing, anger or hope before a word is spoken.”</blockquote>
+    ${foot("Filmography")}
+  </section>`);
+
+  /* 4. FROM THE SETS */
+  const pick = ["police-officer", "boat-emotion", "axe-look", "scene-field", "jeep-look", "white-uniform", "riverside", "cricket-team", "denim-forest"];
+  const layout = { "boat-emotion": "tall", "scene-field": "wide", "cricket-team": "wide" };
+  const sets = pick.map((k) => SETS.find((s) => s.src.includes("/" + k + ".jpg"))).filter(Boolean);
+  pages.push(`<section class="page">
+    <div class="eyebrow">Behind the camera</div>
+    <h2>From the <em>Sets</em></h2>
+    <div class="sets">${sets.map((s) => {
+      const k = s.src.split("/").pop().replace(".jpg", "");
+      return `<figure class="${layout[k] || ""}"><img src="${img(s.src)}" alt=""><figcaption>${esc(s.caption)}</figcaption></figure>`;
+    }).join("")}</div>
+    ${foot("From the Sets")}
+  </section>`);
+
+  /* 4b. PORTRAITS (new photos) */
+  const portraits = ["images/gallery/denim-street.jpg", "images/gallery/red-vest.jpg", "images/gallery/white-kurta.jpg", "images/gallery/kousalya-poster.jpg"];
+  const pcaps = ["Street style", "Character look", "Festive look", "Kousalya Krishnamurthy · official poster"];
+  pages.push(`<section class="page">
+    <div class="eyebrow">Gallery</div>
+    <h2>In <em>Frame</em></h2>
+    <div class="portraits">${portraits.map((p, i) => `<figure><img src="${img(p)}" alt=""><figcaption>${pcaps[i]}</figcaption></figure>`).join("")}</div>
+    ${foot("Gallery")}
+  </section>`);
+
+  /* 5. YOGA */
+  pages.push(`<section class="page">
+    <div class="eyebrow">Yoga therapy</div>
+    <h2>Breath. Body. <em>Balance.</em></h2>
+    <p style="margin-top:4mm;max-width:150mm">${esc(SITE.yogaIntro)}</p>
+    <div class="asanas">${[0, 1, 2, 3, 6].map((k) => YOGA_ASANAS[k]).filter(Boolean).map((a, i) => `<figure class="${i === 0 ? "feature" : ""}"><img src="${img(a.src)}" alt=""><figcaption><b>${esc(a.name)}</b>${esc(a.meaning)}</figcaption></figure>`).join("")}</div>
+    <div class="services">${YOGA_SERVICES.map((s) => `<div><span class="ic">${s.icon}</span><div><strong>${esc(s.title)}</strong><span>${esc(s.text)}</span></div></div>`).join("")}</div>
+    ${foot("Yoga Therapy")}
+  </section>`);
+
+  /* 6. CONTACT */
+  pages.push(`<section class="page contact-page">
+    <div class="avatar"><img src="${img("images/gallery/portrait-laugh.jpg")}" alt=""></div>
+    <h2>Let's <em>connect</em></h2>
+    <p style="margin-top:3mm">For film roles or yoga therapy sessions.</p>
+    <div class="lines">
+      <a href="mailto:${esc(c.email)}"><em>Email</em> ${esc(c.email)}</a>
+      ${phones.map((p) => `<a href="https://wa.me/${p.replace(/\D/g, "")}"><em>Call · WhatsApp</em> ${esc(p)}</a>`).join("")}
+    </div>
+    <div class="site">Full portfolio, films & gallery: <a href="${SITE_URL}">${SITE_URL.replace("https://", "")}</a></div>
+    ${foot("Contact")}
+  </section>`);
+
+  document.getElementById("doc").innerHTML = pages.join("");
+})();
+</script>
+</body>
+</html>
