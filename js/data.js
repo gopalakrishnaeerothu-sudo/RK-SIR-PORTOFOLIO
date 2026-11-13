@@ -274,7 +274,38 @@ const CRAFT = [
    SHORT FILMS (add year / link / poster when available)
    --------------------------------------------------------------------- */
 const SHORT_FILMS = [
-  { title: "Happy Valentine's Day", year: "", role: "", link: "", poster: "" }
+  { title: "The Artist", year: "", role: "", credit: "Written & directed by Jay R M", link: "", poster: "images/sets/the-artist.jpg" },
+  { title: "Happy Valentine's Day", year: "", role: "", credit: "", link: "", poster: "" }
+];
+
+/* ---------------------------------------------------------------------
+   FROM THE SETS (enhanced stills, character looks, behind the scenes)
+   files live in images/sets/
+   --------------------------------------------------------------------- */
+const SETS = [
+  { src: "images/sets/police-officer.jpg", caption: "In uniform" },
+  { src: "images/sets/boat-emotion.jpg", caption: "Emotional scene" },
+  { src: "images/sets/axe-look.jpg", caption: "Character look" },
+  { src: "images/sets/riverside.jpg", caption: "On location" },
+  { src: "images/sets/scene-field.jpg", caption: "Film still" },
+  { src: "images/sets/jeep-look.jpg", caption: "Character look" },
+  { src: "images/sets/denim-forest.jpg", caption: "Outdoor shoot" },
+  { src: "images/sets/cricket-team.jpg", caption: "Team spirit" },
+  { src: "images/sets/white-uniform.jpg", caption: "Costume look" },
+  { src: "images/sets/big-screen.jpg", caption: "On the big screen · Dec 2019" },
+  { src: "images/sets/village-selfie.jpg", caption: "Between shots" },
+  { src: "images/sets/scene-room.jpg", caption: "Film still" },
+  { src: "images/sets/navy-suit.jpg", caption: "Style shoot" },
+  { src: "images/sets/sofa-scene.jpg", caption: "On set" },
+  { src: "images/sets/edit-suite.jpg", caption: "In the edit" },
+  { src: "images/sets/jeep-angle.jpg", caption: "On location" },
+  { src: "images/sets/shades-smile.jpg", caption: "Candid" },
+  { src: "images/sets/scene-camp.jpg", caption: "Film still" },
+  { src: "images/sets/short-film-still.jpg", caption: "Short film still" },
+  { src: "images/sets/on-tv.jpg", caption: "On screen" },
+  { src: "images/sets/cricket-bench.jpg", caption: "Film still" },
+  { src: "images/sets/with-fans.jpg", caption: "With well-wishers" },
+  { src: "images/sets/the-artist.jpg", caption: "The Artist · short film" }
 ];
 
 /* ---------------------------------------------------------------------

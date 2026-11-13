@@ -55,11 +55,38 @@
   // Short films
   $("#shortGrid").innerHTML = SHORT_FILMS.map((s) => {
     const meta = [s.year, s.role && "as " + s.role].filter(Boolean).join(" · ") || "Short film";
-    const inner = `<span class="short-icon">🎞️</span><div><strong>${esc(s.title)}</strong><small>${esc(meta)}</small></div>${s.link ? '<span class="short-play">▶</span>' : ""}`;
+    const thumb = s.poster
+      ? `<img class="short-thumb" src="${esc(s.poster)}" alt="${esc(s.title)} poster" loading="lazy">`
+      : `<span class="short-icon">🎞️</span>`;
+    const inner = `${thumb}<div><strong>${esc(s.title)}</strong><small>${esc(meta)}</small>${s.credit ? `<em class="short-credit">${esc(s.credit)}</em>` : ""}</div>${s.link ? '<span class="short-play">▶</span>' : ""}`;
     return s.link
       ? `<a class="short-card" href="${esc(s.link)}" target="_blank" rel="noopener">${inner}</a>`
       : `<div class="short-card">${inner}</div>`;
   }).join("");
+
+  // From the Sets: masonry of enhanced stills; each tile tilts in 3D and opens full size
+  const setsGrid = $("#setsGrid");
+  SETS.forEach((p, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "set-tile reveal";
+    fig.style.transitionDelay = (i % 4) * 0.07 + "s";
+    fig.innerHTML = `<img alt="${esc(p.caption)}" loading="lazy" decoding="async"><figcaption>${esc(p.caption)}</figcaption><span class="set-shine"></span>`;
+    const img = $("img", fig);
+    img.addEventListener("error", () => fig.remove(), { once: true });
+    img.src = p.src;
+    fig.addEventListener("click", () => openLightbox(p.src, p.caption));
+    if (!isMobile && !reduceMotion) {
+      fig.addEventListener("mousemove", (e) => {
+        const r = fig.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        fig.style.transform = `perspective(900px) rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg) scale(1.02)`;
+        fig.style.setProperty("--mx", x * 100 + "%");
+        fig.style.setProperty("--my", y * 100 + "%");
+      });
+      fig.addEventListener("mouseleave", () => { fig.style.transform = ""; });
+    }
+    setsGrid.appendChild(fig);
+  });
 
   // shared with hero.js
   window.RK = { esc, setImg, placeholder, openMovie: (m) => openMovie(m) };
