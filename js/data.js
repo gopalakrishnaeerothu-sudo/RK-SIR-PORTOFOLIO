@@ -324,6 +324,20 @@ const RING_PHOTOS = [
 ];
 
 /* ---------------------------------------------------------------------
+   YOGA ASANA SHOWCASE (enhanced portraits in images/yoga/)
+   --------------------------------------------------------------------- */
+const YOGA_ASANAS = [
+  { src: "images/yoga/padma-sirsasana.jpg", name: "Padma Sirsasana", meaning: "Lotus headstand" },
+  { src: "images/yoga/vrikshasana.jpg", name: "Vrikshasana", meaning: "Tree pose" },
+  { src: "images/yoga/parvatasana.jpg", name: "Parvatasana", meaning: "Seated mountain" },
+  { src: "images/yoga/dhyana.jpg", name: "Dhyana", meaning: "Meditation · chin mudra" },
+  { src: "images/yoga/padmasana.jpg", name: "Padmasana", meaning: "Lotus with namaskar" },
+  { src: "images/yoga/sukhasana.jpg", name: "Sukhasana", meaning: "Easy seat" },
+  { src: "images/yoga/early-practice.jpg", name: "Early practice", meaning: "From the album" },
+  { src: "images/yoga/namaskar-river.jpg", name: "Namaskar", meaning: "Above the river" }
+];
+
+/* ---------------------------------------------------------------------
    YOGA THERAPY SERVICES
    --------------------------------------------------------------------- */
 const YOGA_SERVICES = [

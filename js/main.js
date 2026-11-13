@@ -64,6 +64,34 @@
       : `<div class="short-card">${inner}</div>`;
   }).join("");
 
+  // Yoga asana showcase: portrait cards (first one featured), 3D tilt, opens full size
+  const asanaGrid = $("#asanaGrid");
+  YOGA_ASANAS.forEach((a, i) => {
+    const card = document.createElement("figure");
+    // first card is featured (2x2); the last spans two columns so every grid width ends on a full row
+    card.className = "asana-card reveal" + (i === 0 ? " feature" : "") + (i === YOGA_ASANAS.length - 1 ? " tail" : "");
+    card.style.transitionDelay = (i % 4) * 0.08 + "s";
+    card.innerHTML = `<img alt="${esc(a.name + " · " + a.meaning)}" loading="lazy" decoding="async">
+      <span class="asana-num">${String(i + 1).padStart(2, "0")}</span>
+      <span class="asana-glow"></span>
+      <figcaption class="asana-info"><strong>${esc(a.name)}</strong><span>${esc(a.meaning)}</span></figcaption>`;
+    const img = $("img", card);
+    img.addEventListener("error", () => card.remove(), { once: true });
+    img.src = a.src;
+    card.addEventListener("click", () => openLightbox(a.src, a.name + " · " + a.meaning));
+    if (!isMobile && !reduceMotion) {
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        card.style.transform = `rotateY(${(x - 0.5) * 10}deg) rotateX(${(0.5 - y) * 10}deg) translateZ(8px)`;
+        card.style.setProperty("--mx", x * 100 + "%");
+        card.style.setProperty("--my", y * 100 + "%");
+      });
+      card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+    }
+    asanaGrid.appendChild(card);
+  });
+
   // From the Sets: masonry of enhanced stills; each tile tilts in 3D and opens full size
   const setsGrid = $("#setsGrid");
   SETS.forEach((p, i) => {
