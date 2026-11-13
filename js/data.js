@@ -38,9 +38,9 @@ const SITE = {
   hero: {
     hello: "Hi, I'm RamaRaju",                    // giant heading on the first screen
     cutout: "images/profile/hero-cutout.webp",     // cut-out portrait standing over the 3D wheel
-    tagline1: "Actor · Writer · Yoga therapist",
-    tagline2: "emotion in every look, line & breath",
-    navCta: "Book a session",
+    tagline1: "Actor · Writer",
+    tagline2: "emotion in every look, every line",
+    navCta: "Get in touch",
     heroCta: "Watch films"
   },
 

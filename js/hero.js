@@ -65,7 +65,7 @@
     { v: "power", url: P() },
     { v: "plain", url: P(), t: "THE WRITER" },
     { v: "off", url: P() },
-    { v: "plain", url: P(), t: "YOGA THERAPY" }
+    { v: "plain", url: P(), t: "ON SET" }
   ];
 
   function creative(d) {
@@ -79,37 +79,37 @@
             <path d="M2 42h30M14 30v96M4 100l26-16"/>
             <path d="M96 34v58M120 34v58M96 92q12 15 24 0"/>
             <path d="M92 108l14 34M126 108l-12 34"/></g></svg>
-        <div class="cv" style="top:20px;text-align:right;font-size:3.4px;letter-spacing:.15em;color:#8d9298">METHOD OF HEALING</div>
-        <div class="cv t-big" style="top:32px;font-size:14px;color:#16171b">Yoga</div>
-        <div class="cv t-big" style="top:47px;font-size:14px;color:#e5202f">Therapy</div>
+        <div class="cv" style="top:20px;text-align:right;font-size:3.4px;letter-spacing:.15em;color:#8d9298">METHOD OF ACTING</div>
+        <div class="cv t-big" style="top:32px;font-size:14px;color:#16171b">Emotion</div>
+        <div class="cv t-big" style="top:47px;font-size:14px;color:#e5202f">In the eyes</div>
         <div class="cv" style="top:76px;font-size:5.2px;font-weight:700;color:#16171b;line-height:1.7">
-          <div><b class="dot"></b>BREATH VIA <b>PRANAYAMA</b></div>
-          <div style="margin-top:8px"><b class="dot sq"></b>CALM VIA <b>MEDITATION</b><br><span style="margin-left:11px">AND POSTURE</span></div>
+          <div><b class="dot"></b>FELT VIA <b>THE EYES</b></div>
+          <div style="margin-top:8px"><b class="dot sq"></b>HEARD VIA <b>DIALOGUE</b><br><span style="margin-left:11px">THAT STAYS</span></div>
         </div>`;
       case "launch": return `
         <div class="fill" style="background:linear-gradient(168deg,#f9d9e5,#f3bdd2 55%,#e8a3c0)"></div>
         <div class="ph" style="top:100px;bottom:0">${im}<div class="fill" style="background:linear-gradient(180deg,rgba(249,217,229,.97),rgba(249,217,229,0) 30%)"></div></div>
-        <div class="cv t-serif" style="top:36px;font-size:17px;color:#b03a63">BREATHE.</div>
-        <div class="cv t-serif" style="top:55px;font-size:17px;color:#b03a63">BALANCE.</div>`;
+        <div class="cv t-serif" style="top:36px;font-size:17px;color:#b03a63">EVERY LOOK.</div>
+        <div class="cv t-serif" style="top:55px;font-size:17px;color:#b03a63">EVERY LINE.</div>`;
       case "shop": return `
         <div class="fill" style="background:#fff"></div>
         <div class="ph" style="top:0;height:148px">${im}</div>
-        <div class="cv" style="top:158px;font-size:5.4px;font-weight:700;letter-spacing:.09em;color:#16171b">PRIVATE SESSIONS</div>
-        <div class="cv" style="top:168px;font-size:4.2px;color:#7b8087">Breath · Posture · Calm</div>
-        <div style="position:absolute;left:10px;top:180px;padding:4px 11px;border-radius:20px;background:#16171b;font-size:4.6px;font-weight:600;color:#fff;letter-spacing:.05em">Book today</div>`;
+        <div class="cv" style="top:158px;font-size:5.4px;font-weight:700;letter-spacing:.09em;color:#16171b">THE WRITER</div>
+        <div class="cv" style="top:168px;font-size:4.2px;color:#7b8087">Emotional dialogues · Honest lines</div>
+        <div style="position:absolute;left:10px;top:180px;padding:4px 11px;border-radius:20px;background:#16171b;font-size:4.6px;font-weight:600;color:#fff;letter-spacing:.05em">Written to be felt</div>`;
       case "brand": return `
         <div class="fill" style="background:linear-gradient(180deg,#0a2a4a,#0d3a63 50%,#08192b)"></div>
         <div class="ph" style="top:92px;bottom:0">${im}<div class="fill" style="background:linear-gradient(180deg,rgba(10,42,74,.98),rgba(10,42,74,0) 36%)"></div></div>
-        <div class="cv" style="top:16px;font-size:4.2px;line-height:1.7;color:rgba(255,255,255,.82);width:74px">Actor, writer, yoga therapist: emotion in the eyes, truth in the words, calm in the breath.</div>
+        <div class="cv" style="top:16px;font-size:4.2px;line-height:1.7;color:rgba(255,255,255,.82);width:74px">Actor and writer: emotion in the eyes, truth in the words, and a story in every frame.</div>
         <div style="position:absolute;right:10px;top:16px;font-size:5.4px;font-weight:600;color:#fff;opacity:.92">✳ RR</div>`;
       case "frete": return `
         <div class="fill" style="background:linear-gradient(158deg,#4a0c80 0%,#7a16a6 40%,#a81fc6 66%,#5c0e90 100%)"></div>
         <div class="ph" style="top:140px;bottom:0;opacity:.45;mix-blend-mode:screen">${im}</div>
         <div class="fill" style="background:radial-gradient(44% 16% at 50% 62%, rgba(255,255,255,.92), rgba(255,255,255,0) 72%)"></div>
         <div style="position:absolute;left:-6px;right:-6px;top:44px;height:13px;background:#ff2d8a;transform:rotate(-2.6deg);box-shadow:0 4px 12px rgba(255,45,138,.5)"></div>
-        <div style="position:absolute;left:0;right:0;top:45.5px;transform:rotate(-2.6deg);text-align:center;font-size:5.6px;font-weight:700;letter-spacing:.05em;color:#fff">IN PERSON AND ONLINE</div>
-        <div class="cv t-big" style="top:64px;font-size:24px;color:#fff;text-shadow:0 3px 0 rgba(84,9,124,.6)">Yoga</div>
-        <div class="cv t-big" style="top:87px;font-size:24px;color:#fff;text-shadow:0 3px 0 rgba(84,9,124,.6)">Classes</div>
+        <div style="position:absolute;left:0;right:0;top:45.5px;transform:rotate(-2.6deg);text-align:center;font-size:5.6px;font-weight:700;letter-spacing:.05em;color:#fff">TELUGU · TAMIL · KANNADA</div>
+        <div class="cv t-big" style="top:64px;font-size:24px;color:#fff;text-shadow:0 3px 0 rgba(84,9,124,.6)">${MOVIES.length}</div>
+        <div class="cv t-big" style="top:87px;font-size:24px;color:#fff;text-shadow:0 3px 0 rgba(84,9,124,.6)">Films</div>
         <div class="cv t-big" style="top:113px;font-size:19px;color:#fff">+</div>`;
       case "power": return `
         <div class="ph phf">${im}</div>
