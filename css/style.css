@@ -371,3 +371,5 @@ html[data-theme="light"] .award-card { background: linear-gradient(135deg, rgba(
 .short-awards i { font-style: normal; font-size: .7rem; font-weight: 600; letter-spacing: .06em; padding: 3px 9px; border-radius: 99px;
   color: #ffd76a; border: 1px solid rgba(255, 200, 80, .4); background: rgba(255, 200, 80, .08); }
 html[data-theme="light"] .short-awards i { color: #8a5a00; }
+.gallery-all-title { margin: 70px 0 26px; text-align: center; }
+#galleryGrid { text-align: left; }

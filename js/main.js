@@ -102,6 +102,20 @@
     asanaGrid.appendChild(card);
   });
 
+  // Gallery: every photo as a masonry grid under the 3D carousel (the carousel only shows a few at once)
+  const galleryGrid = $("#galleryGrid");
+  GALLERY.forEach((g, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "set-tile reveal";
+    fig.style.transitionDelay = (i % 4) * 0.07 + "s";
+    fig.innerHTML = `<img alt="${esc(g.caption || SITE.name)}" loading="lazy" decoding="async"><figcaption>${esc(g.caption || "")}</figcaption><span class="set-shine"></span>`;
+    const im = $("img", fig);
+    im.addEventListener("error", () => fig.remove(), { once: true });
+    im.src = g.src;
+    fig.addEventListener("click", () => openLightbox(g.src, g.caption));
+    galleryGrid.appendChild(fig);
+  });
+
   // From the Sets: masonry of enhanced stills; each tile tilts in 3D and opens full size
   const setsGrid = $("#setsGrid");
   SETS.forEach((p, i) => {
