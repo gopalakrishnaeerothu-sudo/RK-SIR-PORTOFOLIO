@@ -310,7 +310,7 @@ const CRAFT = [
    --------------------------------------------------------------------- */
 const SHORT_FILMS = [
   { title: "The Artist", year: "", role: "", credit: "Written & directed by Jay R M", awards: ["Best Actor", "Best Short Film"], link: "", poster: "images/sets/the-artist.jpg" },
-  { title: "Happy Valentine's Day", year: "", role: "", credit: "", link: "", poster: "" }
+  { title: "Happy Valentine's Day", year: "", role: "", credit: "", link: "", poster: "images/sets/happy-valentines-day.jpg" }
 ];
 
 /* ---------------------------------------------------------------------
