@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-tt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a111b"/>
+      <stop offset="100%" stop-color="#0d0407"/>
+    </linearGradient>
+    <linearGradient id="border-tt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4757"/>
+      <stop offset="50%" stop-color="#ff6b81"/>
+      <stop offset="100%" stop-color="#c0392b"/>
+    </linearGradient>
+    <linearGradient id="rubber-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b81"/>
+      <stop offset="60%" stop-color="#ee5253"/>
+      <stop offset="100%" stop-color="#b32e2e"/>
+    </linearGradient>
+    <linearGradient id="handle-wood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5cd79"/>
+      <stop offset="50%" stop-color="#e1b12c"/>
+      <stop offset="100%" stop-color="#c29117"/>
+    </linearGradient>
+    <filter id="glow-tt" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#ff4757" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Frame -->
+  <rect x="8" y="8" width="144" height="144" rx="28" fill="url(#bg-tt)" stroke="url(#border-tt)" stroke-width="2"/>
+  <circle cx="80" cy="80" r="54" fill="none" stroke="rgba(255,71,87,0.12)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Table Net Line -->
+  <g stroke="rgba(255,255,255,0.25)">
+    <line x1="26" y1="116" x2="134" y2="116" stroke-width="2.5" stroke="#ff4757"/>
+    <line x1="26" y1="124" x2="134" y2="124" stroke-width="1"/>
+    <line x1="44" y1="116" x2="44" y2="126" stroke-width="0.8"/>
+    <line x1="62" y1="116" x2="62" y2="126" stroke-width="0.8"/>
+    <line x1="80" y1="116" x2="80" y2="126" stroke-width="0.8"/>
+    <line x1="98" y1="116" x2="98" y2="126" stroke-width="0.8"/>
+    <line x1="116" y1="116" x2="116" y2="126" stroke-width="0.8"/>
+  </g>
+
+  <!-- Secondary Paddle (Black Rubber, angled back) -->
+  <g transform="translate(62, 70) rotate(-40)" opacity="0.45">
+    <circle cx="0" cy="0" r="24" fill="#2f3542" stroke="#57606f" stroke-width="1.5"/>
+    <rect x="-4" y="24" width="8" height="26" rx="3" fill="#a4b0be"/>
+  </g>
+
+  <!-- Main Racket (Red Rubber, angled forward) -->
+  <g filter="url(#glow-tt)" transform="translate(78, 68) rotate(24)">
+    <!-- Blade Head (Pimpled / Smooth Rubber) -->
+    <ellipse cx="0" cy="-6" rx="26" ry="28" fill="url(#rubber-red)" stroke="#ffffff" stroke-width="1.2"/>
+    <!-- Blade Edge Tape -->
+    <ellipse cx="0" cy="-6" rx="26" ry="28" fill="none" stroke="#222" stroke-width="2"/>
+    <!-- Handle -->
+    <rect x="-6" y="22" width="12" height="32" rx="4" fill="url(#handle-wood)" stroke="#574b10" stroke-width="1"/>
+    <!-- Handle comfort grip stripes -->
+    <rect x="-3" y="24" width="6" height="28" fill="#574b10" opacity="0.35"/>
+    <!-- Highlight on rubber -->
+    <ellipse cx="-10" cy="-14" rx="8" ry="4" transform="rotate(-30 -10 -14)" fill="rgba(255,255,255,0.3)"/>
+  </g>
+
+  <!-- Ball Bounce Curve & Ball -->
+  <path d="M 50 100 Q 75 70 114 48" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6"/>
+  <!-- Celluloid Ball (40mm star ball) -->
+  <circle cx="116" cy="46" r="10" fill="#ffffff" filter="url(#glow-tt)"/>
+  <circle cx="113" cy="43" r="2.5" fill="rgba(255,255,255,0.9)"/>
+  <!-- Orange / White 3-Star symbol tiny dot -->
+  <circle cx="116" cy="46" r="1.5" fill="#f39c12"/>
+</svg>

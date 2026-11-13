@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-tennis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142617"/>
+      <stop offset="100%" stop-color="#040e06"/>
+    </linearGradient>
+    <linearGradient id="border-tennis" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#badc58"/>
+      <stop offset="50%" stop-color="#6ab04c"/>
+      <stop offset="100%" stop-color="#10ac84"/>
+    </linearGradient>
+    <radialGradient id="tennis-ball" cx="35%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#f9ca24"/>
+      <stop offset="35%" stop-color="#badc58"/>
+      <stop offset="85%" stop-color="#6ab04c"/>
+      <stop offset="100%" stop-color="#407328"/>
+    </radialGradient>
+    <filter id="glow-tennis" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#badc58" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <!-- Frame -->
+  <rect x="8" y="8" width="144" height="144" rx="28" fill="url(#bg-tennis)" stroke="url(#border-tennis)" stroke-width="2"/>
+  <circle cx="80" cy="80" r="54" fill="none" stroke="rgba(186,220,88,0.12)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Court Baseline / Service Box in Background -->
+  <g stroke="rgba(255,255,255,0.25)" stroke-width="1.5">
+    <line x1="28" y1="124" x2="132" y2="124" stroke-width="2.5" stroke="#badc58"/>
+    <line x1="80" y1="95" x2="80" y2="124"/>
+    <line x1="40" y1="95" x2="120" y2="95"/>
+  </g>
+
+  <!-- Tennis Racket (Angled) -->
+  <g transform="translate(68, 76) rotate(-28)">
+    <!-- Racket Head -->
+    <ellipse cx="0" cy="-24" rx="22" ry="29" fill="none" stroke="#222f3e" stroke-width="4.5"/>
+    <ellipse cx="0" cy="-24" rx="22" ry="29" fill="none" stroke="#10ac84" stroke-width="2"/>
+    <!-- Strings -->
+    <g stroke="rgba(255,255,255,0.4)" stroke-width="0.8">
+      <line x1="-12" y1="-44" x2="-12" y2="-4"/>
+      <line x1="-6" y1="-50" x2="-6" y2="2"/>
+      <line x1="0" y1="-52" x2="0" y2="4"/>
+      <line x1="6" y1="-50" x2="6" y2="2"/>
+      <line x1="12" y1="-44" x2="12" y2="-4"/>
+      <line x1="-18" y1="-34" x2="18" y2="-34"/>
+      <line x1="-21" y1="-24" x2="21" y2="-24"/>
+      <line x1="-18" y1="-14" x2="18" y2="-14"/>
+    </g>
+    <!-- Throat -->
+    <path d="M -7 4 L 0 16 L 7 4" fill="none" stroke="#222f3e" stroke-width="3"/>
+    <!-- Shaft & Grip -->
+    <rect x="-3.5" y="15" width="7" height="38" rx="2.5" fill="#f8f9fa" stroke="#10ac84" stroke-width="1"/>
+    <!-- Grip wrap tape -->
+    <line x1="-3.5" y1="22" x2="3.5" y2="26" stroke="#10ac84" stroke-width="1.2"/>
+    <line x1="-3.5" y1="30" x2="3.5" y2="34" stroke="#10ac84" stroke-width="1.2"/>
+    <line x1="-3.5" y1="38" x2="3.5" y2="42" stroke="#10ac84" stroke-width="1.2"/>
+  </g>
+
+  <!-- Optic Yellow Tennis Ball (Foreground) -->
+  <g filter="url(#glow-tennis)" transform="translate(108, 62)">
+    <circle cx="0" cy="0" r="22" fill="url(#tennis-ball)"/>
+    <!-- Curved White Seams -->
+    <path d="M -16 -12 C -6 -7, -6 7, -16 12" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 16 -12 C 6 -7, 6 7, 16 12" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <!-- Felt Fuzz / Highlight -->
+    <ellipse cx="-6" cy="-8" rx="5" ry="2.5" transform="rotate(-30 -6 -8)" fill="rgba(255,255,255,0.45)"/>
+  </g>
+</svg>

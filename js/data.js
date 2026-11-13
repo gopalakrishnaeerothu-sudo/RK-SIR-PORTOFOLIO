@@ -262,8 +262,111 @@ const QUALIFICATIONS = [
   { title: "M.Sc in Yoga Therapy", type: "Postgraduate" },
   { title: "PG Diploma in Yoga", type: "Postgraduate diploma" },
   { title: "Teacher Training in Yoga", type: "Certification" },
-  { title: "Bachelor of Physical Education", type: "Graduate" },
+  { title: "Bachelor of Physical Education", type: "12 Games Specialization" },
   { title: "B.Com (Computers)", type: "Graduate" }
+];
+
+/* ---------------------------------------------------------------------
+   GAMES & SPORTS SPECIALIZATION (Bachelor of Physical Education · B.P.Ed)
+   12 Disciplines with related small frames / logos
+   --------------------------------------------------------------------- */
+const GAMES_SPECIALIZATION = [
+  {
+    id: 1,
+    name: "Cricket",
+    icon: "🏏",
+    image: "images/sports/cricket.svg",
+    role: "Batting & Bowling Techniques",
+    desc: "Mastery in batting mechanics, bowling action, fielding dynamics and match strategy."
+  },
+  {
+    id: 2,
+    name: "Basketball",
+    icon: "🏀",
+    image: "images/sports/basketball.svg",
+    role: "Offense, Defense & Fast Breaks",
+    desc: "Ball handling, shooting drills, court vision, defensive pressing and tactical plays."
+  },
+  {
+    id: 3,
+    name: "Volleyball",
+    icon: "🏐",
+    image: "images/sports/volleyball.svg",
+    role: "Spike, Block & Court Rotation",
+    desc: "Setting precision, powerful jump spikes, defensive digs, blocks and rotational systems."
+  },
+  {
+    id: 4,
+    name: "Shuttle Badminton",
+    icon: "🏸",
+    image: "images/sports/badminton.svg",
+    role: "Footwork & Racket Speed",
+    desc: "Deceptive drops, smashes, swift lateral court coverage and tactical shot placement."
+  },
+  {
+    id: 5,
+    name: "Football",
+    icon: "⚽",
+    image: "images/sports/football.svg",
+    role: "Tactics, Dribbling & Endurance",
+    desc: "Positional play, high-speed ball control, passing accuracy and aerobic conditioning."
+  },
+  {
+    id: 6,
+    name: "Tenni Koit",
+    icon: "⭕",
+    image: "images/sports/tenni-koit.svg",
+    role: "Reflexes & Ring Flight Control",
+    desc: "Single-hand catches, spin releases, swift trajectory anticipation and court agility."
+  },
+  {
+    id: 7,
+    name: "Kho Kho",
+    icon: "🏃",
+    image: "images/sports/kho-kho.svg",
+    role: "Chasing, Dodging & Pole Turns",
+    desc: "High-intensity diving touches, zig-zag dodging, pole turning and instant acceleration."
+  },
+  {
+    id: 8,
+    name: "Sepak Thakraw",
+    icon: "⚡",
+    image: "images/sports/sepak-thakraw.svg",
+    role: "Acrobatic Kicks & Air Balance",
+    desc: "Overhead bicycle kicks, sunback spikes, foot-eye coordination and net agility."
+  },
+  {
+    id: 9,
+    name: "Table Tennis",
+    icon: "🏓",
+    image: "images/sports/table-tennis.svg",
+    role: "Spin, Slices & Rapid Reflexes",
+    desc: "Topspin loops, backhand slices, quick counter-attacks and rapid reflex response."
+  },
+  {
+    id: 10,
+    name: "Kabaddi",
+    icon: "🤼",
+    image: "images/sports/kabaddi.svg",
+    role: "Raiding, Ankle Holds & Defense",
+    desc: "Cant management, toe touches, chain tackles, waist grips and combat balance."
+  },
+  {
+    id: 11,
+    name: "Handball",
+    icon: "🤾",
+    image: "images/sports/handball.svg",
+    role: "Jump Shots & Rapid Transitions",
+    desc: "Three-step rhythm, airborne power throws, perimeter defense and fast counter-attacks."
+  },
+  {
+    id: 12,
+    name: "Tennis",
+    icon: "🎾",
+    image: "images/sports/tennis.svg",
+    role: "Baseline Power & Court Strategy",
+    desc: "Topspin groundstrokes, serve precision, net volleys and endurance baseline rallies."
+  }
 ];
 
 /* ---------------------------------------------------------------------

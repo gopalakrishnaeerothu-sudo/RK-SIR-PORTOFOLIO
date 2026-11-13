@@ -12,6 +12,7 @@ Everything is controlled from **`js/data.js`**.
 | About photo | `images/profile/about.jpg` | `aboutPhoto` |
 | Movie posters | `images/movies/` | `poster` in each movie of `MOVIES` |
 | Gallery photos | `images/gallery/` | `src` in `GALLERY` |
+| Games / Sports logos | `images/sports/` | `GAMES_SPECIALIZATION` in `js/data.js` |
 
 ### Adding a movie
 Copy one block inside `MOVIES` and fill it in:

@@ -44,7 +44,11 @@
     .map((f) => `<div class="fact"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
 
   // Qualifications (highest first)
-  $("#quals").innerHTML = QUALIFICATIONS.map((q) => `<li><strong>${esc(q.title)}</strong><span>${esc(q.type)}</span></li>`).join("");
+  $("#quals").innerHTML = QUALIFICATIONS.map((q) => {
+    const isSports = q.type.toLowerCase().includes("games") || q.title.toLowerCase().includes("physical education");
+    const typeLabel = isSports ? `<a href="#sports" class="qual-link" title="Jump to 12 Games Specialization">${esc(q.type)} →</a>` : `<span>${esc(q.type)}</span>`;
+    return `<li><strong>${esc(q.title)}</strong>${typeLabel}</li>`;
+  }).join("");
 
   // Awards
   $("#awards").innerHTML = AWARDS.map((w) => `
@@ -194,6 +198,26 @@
     noLink.style.display = m.link && !m.watchOn ? "none" : "";
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
+  }
+
+  /* ---------------------------------------------------------------
+     12 Games Specialization (B.P.Ed)
+     --------------------------------------------------------------- */
+  const sportsGrid = $("#sportsGrid");
+  if (sportsGrid && typeof GAMES_SPECIALIZATION !== "undefined") {
+    sportsGrid.innerHTML = GAMES_SPECIALIZATION.map((s, i) => `
+      <article class="sport-card reveal" style="transition-delay:${(i % 4) * 0.07}s">
+        <div class="sport-header">
+          <div class="sport-frame">
+            <img src="${esc(s.image)}" alt="${esc(s.name)} logo" class="sport-logo" loading="lazy" />
+          </div>
+          <span class="sport-num">${String(s.id).padStart(2, "0")}</span>
+        </div>
+        <h3 class="sport-name">${esc(s.name)}</h3>
+        <span class="sport-role">${esc(s.role)}</span>
+        <p class="sport-desc">${esc(s.desc)}</p>
+      </article>
+    `).join("");
   }
 
   /* ---------------------------------------------------------------
