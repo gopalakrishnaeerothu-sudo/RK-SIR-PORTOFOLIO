@@ -380,6 +380,8 @@ const AWARDS = [
 const FACTS = [
   { label: "Full name", value: "Ramakrishna Raju Oruganti" },
   { label: "Born", value: "22 May 1986" },
+  { label: "Height", value: "5′ 10″" },
+  { label: "Languages", value: "Telugu · English · Kannada · Hindi · Tamil" },
   { label: "Highest degree", value: "M.Sc in Yoga Therapy" },
   { label: "Work", value: "Actor · Writer · Yoga Therapist" }
 ];
